@@ -1,0 +1,16 @@
+﻿<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="sql-armisdev.database.windows.net.sqldb-intranet.feup2024"
+  DTS:DTSID="{12311CAD-4140-44E6-A7BE-2A4F1CF0301E}"
+  DTS:CreationName="OLEDB">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectRetryCount="1"
+      DTS:ConnectRetryInterval="5"
+      DTS:ConnectionString="Data Source=sql-armisdev.database.windows.net;User ID=feup2024;Initial Catalog=sqldb-intranet;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;Application Name=SSIS-ARMIS Projeto Integrador-{12311CAD-4140-44E6-A7BE-2A4F1CF0301E}sql-armisdev.database.windows.net.sqldb-intranet.feup2024;">
+      <DTS:Password
+        DTS:Name="Password"
+        Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAV8vjVTtrH0Wj6Pmw07PyTwAAAAACAAAAAAAQZgAAAAEAACAAAAAXAollL/Suw7BuZS5V7/MIjkfkDdXPfO3dYJ8zZWyPdQAAAAAOgAAAAAIAACAAAAAaJq5tmqb+HD2tR6GeJZCyx6a82hPMt3oc9GM+VA/KMoAAAAChMt/BPRYxc9Xjkpznw4c741pUQ+deA7BBGyUWmK4dkBHKxIxCcgxh4Hw8ibNWYSekSwbOOOJU+1N2QU6Kjyaq7CpyiXoGD1GX+VgpBkAYAXye91sfTlZB+PnG56bk83AwN3q6wDY2x6hqW6NfY+cMfKEvcQlNEoLdnvOSvemA7UAAAACERHzutFitPIk4LqTrErpX9GF+0LggE+8BTT2BPOIACLdSPssTfjVaJErI2xRyOhlBZhWhCEf0rIl81WtKOOFQ</DTS:Password>
+    </DTS:ConnectionManager>
+  </DTS:ObjectData>
+</DTS:ConnectionManager>

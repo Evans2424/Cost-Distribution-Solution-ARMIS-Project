@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34616.47
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{C9674DCB-5085-4A16-B785-4C70DD1589BD}") = "ARMIS Projeto Integrador", "ARMIS Projeto Integrador\ARMIS Projeto Integrador.dtproj", "{C92A4E69-43C5-4642-AA99-676947ADFC56}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Development|Default = Development|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C92A4E69-43C5-4642-AA99-676947ADFC56}.Development|Default.ActiveCfg = Development
+		{C92A4E69-43C5-4642-AA99-676947ADFC56}.Development|Default.Build.0 = Development
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9C0C25D5-080F-42BC-9FD9-8F236DE5955A}
+	EndGlobalSection
+EndGlobal

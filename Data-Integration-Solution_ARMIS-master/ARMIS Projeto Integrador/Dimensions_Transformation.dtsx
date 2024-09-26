@@ -1,0 +1,3321 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="2/23/2024 4:33:35 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-UMHE8LJ"
+  DTS:CreatorName="DESKTOP-UMHE8LJ\jpjoa"
+  DTS:DTSID="{D683ADCA-17FE-4994-9012-E80C1339A234}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5397.1"
+  DTS:LocaleID="2070"
+  DTS:ObjectName="Stage2_Transformation"
+  DTS:PackageType="5"
+  DTS:VersionBuild="395"
+  DTS:VersionGUID="{85204247-3F63-4E36-BAF0-0F36A1CCD046}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[extraction.log.txt]"
+      DTS:CreationName="FILE"
+      DTS:DTSID="{E9AFEDB3-C1AD-4DEF-896B-E2070E68A4C7}"
+      DTS:ObjectName="extraction.log.txt">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:FileUsageType="1"
+          DTS:ConnectionString="C:\Users\jpjoa\OneDrive\Área de Trabalho\ARMIS\ARMIS Projeto Integrador\ARMIS Projeto Integrador\extraction.log.txt" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[ExtractionLog.log]"
+      DTS:CreationName="FILE"
+      DTS:DTSID="{E91A8AF6-CD4E-4607-BE0D-55C8A9DD4C1D}"
+      DTS:ObjectName="ExtractionLog.log">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:FileUsageType="1"
+          DTS:ConnectionString="C:\Users\jpjoa\OneDrive\Área de Trabalho\ARMIS\ARMIS Projeto Integrador\ARMIS Projeto Integrador\ExtractionLog.log" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:LogProviders>
+    <DTS:LogProvider
+      DTS:ConfigString="ExtractionLog.log"
+      DTS:CreationName="Microsoft.LogProviderTextFile"
+      DTS:Description="Writes log entries for events to a CSV file"
+      DTS:DTSID="{26624519-F1B6-40F2-94CE-649B2FCFC227}"
+      DTS:ObjectName="Data Extraction Log File">
+      <DTS:ObjectData>
+        <InnerObject />
+      </DTS:ObjectData>
+    </DTS:LogProvider>
+  </DTS:LogProviders>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{5579B8DF-E243-4341-B3A3-75A5EB7B39FD}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="perfilNaoEncntradoLocal">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{38B3DBFC-1638-4B58-A1D6-DAAA4AB0BD1A}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="rowCountCC">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{69EDB772-A3D2-445C-AF7A-57AF12965CCE}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="rowCountColaboradores">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{1AE099C7-4D6B-4996-B545-3B11667A3954}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="rowCountEmpresa">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{F4894DFE-2395-4CB2-AD43-29FF2021F527}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="rowCountImputacoes">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{453FAA6C-6A18-4D8C-8B8F-2D60E2C67C0F}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="rowCountPerfil">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{B0D473DC-E974-46CB-8D4E-C8E6BBF36092}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="rowCountProjeto">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{0B407852-2449-4C8D-9F28-234755D3DB47}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="tableNameCC">
+      <DTS:VariableValue
+        DTS:DataType="8">dw.CentroCusto</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{4D4514BF-4EF6-4F3F-AD31-4CC07F0D8A0E}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="tableNameColaboradores">
+      <DTS:VariableValue
+        DTS:DataType="8">dw.Colaboradores</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{DF62F505-96D6-4B12-86B2-797CB045DA7A}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="tableNameEmpresa">
+      <DTS:VariableValue
+        DTS:DataType="8">dw.Empresa</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{AA8001B7-5FF7-4957-8298-F42C442E1D7F}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="tableNameImputacoes">
+      <DTS:VariableValue
+        DTS:DataType="8">dw.Imputacoes</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{4291D5A1-AF91-4180-BC83-A4EE50B347C3}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="tableNamePerfil">
+      <DTS:VariableValue
+        DTS:DataType="8">dw.Perfil</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{341A0636-D9A4-4AC4-BF1A-E81506BA0A51}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="tableNameProjeto">
+      <DTS:VariableValue
+        DTS:DataType="8">dw.Projeto</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:LoggingOptions
+    DTS:FilterKind="0"
+    DTS:LoggingMode="1">
+    <DTS:Property
+      DTS:DataType="8"
+      DTS:Name="EventFilter">3,18,OnPipelineRowsSent,13,OnPostExecute,12,OnPreExecute</DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnPipelineRowsSent"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnPostExecute"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnPreExecute"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:SelectedLogProviders>
+      <DTS:SelectedLogProvider
+        DTS:InstanceID="{26624519-F1B6-40F2-94CE-649B2FCFC227}" />
+    </DTS:SelectedLogProviders>
+  </DTS:LoggingOptions>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\SEQC_Calendario"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{00FC1565-FBFB-4632-B160-3BE8CB346E52}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="SEQC_Calendario">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\SEQC_Calendario\Execute SQL Task"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{9906FA55-9B23-48E4-9EE4-046FC2CA718D}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Execute SQL Task"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{57D6D694-C0FA-44BF-A876-D3C891EBD1AB}"
+              SQLTask:SqlStatementSource="SET DATEFIRST  1,&#xA;    DATEFORMAT ymd, &#xA;    LANGUAGE   Portuguese;&#xA; &#xA;DECLARE @StartDate  date = '2010-01-01';&#xA; &#xA;DECLARE @CutoffDate date = '2029-12-31';&#xA; &#xA;WITH seq(n) AS &#xA;(&#xA;  SELECT 0 UNION ALL SELECT n + 1 FROM seq&#xA;  WHERE n &lt; DATEDIFF(DAY, @StartDate, @CutoffDate)&#xA;),&#xA;d(d) AS &#xA;(&#xA;  SELECT DATEADD(DAY, n, @StartDate) FROM seq&#xA;),&#xA;src AS&#xA;(&#xA;  SELECT&#xA;    Data_YMD&#x9;&#x9;= CONVERT(date, d),&#xA;    Dia&#x9;&#x9;&#x9;&#x9;= DATEPART(DAY, d),&#xA;    Mes&#x9;&#x9;&#x9;&#x9;= DATEPART(MONTH, d),&#xA;&#x9;Ano&#x9;&#x9;&#x9;&#x9;= DATEPART(YEAR, d),&#xA;    MesNome&#x9;&#x9;&#x9;= DATENAME(MONTH, d),&#xA;    MesNomeAbrev&#x9;= LEFT(DATENAME(MONTH, d), 3)&#xA;  FROM d&#xA;)&#xA; &#xA;INSERT INTO dw.DimData (Data_YMD, Dia, Mes, Ano, MesNome, MesNomeAbrev)&#xA;SELECT * &#xA;FROM src&#xA;ORDER BY Data_YMD&#xA;OPTION (MAXRECURSION 0);" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\SEQC_CentroCusto"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{3A3FD41C-6F1E-42E8-9A1D-4665C4F0CDBE}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="SEQC_CentroCusto">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\SEQC_CentroCusto\DFT_CentroCusto"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Data Flow Task"
+          DTS:DTSID="{375221DF-F886-4458-B124-5B64DACF487E}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="DFT_CentroCusto"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\SEQC_CentroCusto\DFT_CentroCusto\OLE_DST_DWCentroCusto"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB Destination"
+                  name="OLE_DST_DWCentroCusto"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[dw].[CentroCusto]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">3</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\SEQC_CentroCusto\DFT_CentroCusto\OLE_DST_DWCentroCusto.Connections[OleDbConnection]"
+                      connectionManagerID="{57D6D694-C0FA-44BF-A876-D3C891EBD1AB}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[DESKTOP-UMHE8LJ_SQLEXPRESS.ARMISDatabase2024]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\SEQC_CentroCusto\DFT_CentroCusto\OLE_DST_DWCentroCusto.Inputs[OLE DB Destination Input]"
+                      errorOrTruncationOperation="Insert"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\SEQC_CentroCusto\DFT_CentroCusto\OLE_DST_DWCentroCusto.Inputs[OLE DB Destination Input].Columns[idCentroCusto]"
+                          cachedDataType="i4"
+                          cachedName="idCentroCusto"
+                          externalMetadataColumnId="Package\SEQC_CentroCusto\DFT_CentroCusto\OLE_DST_DWCentroCusto.Inputs[OLE DB Destination Input].ExternalColumns[idCentroCusto]"
+                          lineageId="Package\SEQC_CentroCusto\DFT_CentroCusto\OLE_SRC_CentroCusto.Outputs[OLE DB Source Output].Columns[idCentroCusto]" />
+                        <inputColumn
+                          refId="Package\SEQC_CentroCusto\DFT_CentroCusto\OLE_DST_DWCentroCusto.Inputs[OLE DB Destination Input].Columns[codigoCentroCusto]"
+                          cachedDataType="wstr"
+                          cachedLength="50"
+                          cachedName="codigoCentroCusto"
+                          externalMetadataColumnId="Package\SEQC_CentroCusto\DFT_CentroCusto\OLE_DST_DWCentroCusto.Inputs[OLE DB Destination Input].ExternalColumns[codigoCentroCusto]"
+                          lineageId="Package\SEQC_CentroCusto\DFT_CentroCusto\OLE_SRC_CentroCusto.Outputs[OLE DB Source Output].Columns[codigoCentroCusto]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\SEQC_CentroCusto\DFT_CentroCusto\OLE_DST_DWCentroCusto.Inputs[OLE DB Destination Input].ExternalColumns[idCentroCusto]"
+                          dataType="i4"
+                          name="idCentroCusto" />
+                        <externalMetadataColumn
+                          refId="Package\SEQC_CentroCusto\DFT_CentroCusto\OLE_DST_DWCentroCusto.Inputs[OLE DB Destination Input].ExternalColumns[codigoCentroCusto]"
+                          dataType="wstr"
+                          length="50"
+                          name="codigoCentroCusto" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\SEQC_CentroCusto\DFT_CentroCusto\OLE_DST_DWCentroCusto.Outputs[OLE DB Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Destination Error Output"
+                      synchronousInputId="Package\SEQC_CentroCusto\DFT_CentroCusto\OLE_DST_DWCentroCusto.Inputs[OLE DB Destination Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\SEQC_CentroCusto\DFT_CentroCusto\OLE_DST_DWCentroCusto.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\SEQC_CentroCusto\DFT_CentroCusto\OLE_DST_DWCentroCusto.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\SEQC_CentroCusto\DFT_CentroCusto\OLE_DST_DWCentroCusto.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\SEQC_CentroCusto\DFT_CentroCusto\OLE_DST_DWCentroCusto.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\SEQC_CentroCusto\DFT_CentroCusto\OLE_SRC_CentroCusto"
+                  componentClassID="Microsoft.OLEDBSource"
+                  contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+                  description="OLE DB Source"
+                  name="OLE_SRC_CentroCusto"
+                  usesDispositions="true"
+                  version="7">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[stg2].[CentroCusto]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.String"
+                      description="The variable that contains the SQL command to be executed."
+                      name="SqlCommandVariable"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">0</property>
+                    <property
+                      dataType="System.String"
+                      description="The mappings between the parameters in the SQL command and variables."
+                      name="ParameterMapping"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\SEQC_CentroCusto\DFT_CentroCusto\OLE_SRC_CentroCusto.Connections[OleDbConnection]"
+                      connectionManagerID="{57D6D694-C0FA-44BF-A876-D3C891EBD1AB}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[DESKTOP-UMHE8LJ_SQLEXPRESS.ARMISDatabase2024]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\SEQC_CentroCusto\DFT_CentroCusto\OLE_SRC_CentroCusto.Outputs[OLE DB Source Output]"
+                      name="OLE DB Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\SEQC_CentroCusto\DFT_CentroCusto\OLE_SRC_CentroCusto.Outputs[OLE DB Source Output].Columns[idCentroCusto]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\SEQC_CentroCusto\DFT_CentroCusto\OLE_SRC_CentroCusto.Outputs[OLE DB Source Output].ExternalColumns[idCentroCusto]"
+                          lineageId="Package\SEQC_CentroCusto\DFT_CentroCusto\OLE_SRC_CentroCusto.Outputs[OLE DB Source Output].Columns[idCentroCusto]"
+                          name="idCentroCusto"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\SEQC_CentroCusto\DFT_CentroCusto\OLE_SRC_CentroCusto.Outputs[OLE DB Source Output].Columns[codigoCentroCusto]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\SEQC_CentroCusto\DFT_CentroCusto\OLE_SRC_CentroCusto.Outputs[OLE DB Source Output].ExternalColumns[codigoCentroCusto]"
+                          length="50"
+                          lineageId="Package\SEQC_CentroCusto\DFT_CentroCusto\OLE_SRC_CentroCusto.Outputs[OLE DB Source Output].Columns[codigoCentroCusto]"
+                          name="codigoCentroCusto"
+                          truncationRowDisposition="FailComponent" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\SEQC_CentroCusto\DFT_CentroCusto\OLE_SRC_CentroCusto.Outputs[OLE DB Source Output].ExternalColumns[idCentroCusto]"
+                          dataType="i4"
+                          name="idCentroCusto" />
+                        <externalMetadataColumn
+                          refId="Package\SEQC_CentroCusto\DFT_CentroCusto\OLE_SRC_CentroCusto.Outputs[OLE DB Source Output].ExternalColumns[codigoCentroCusto]"
+                          dataType="wstr"
+                          length="50"
+                          name="codigoCentroCusto" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\SEQC_CentroCusto\DFT_CentroCusto\OLE_SRC_CentroCusto.Outputs[OLE DB Source Error Output]"
+                      isErrorOut="true"
+                      name="OLE DB Source Error Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\SEQC_CentroCusto\DFT_CentroCusto\OLE_SRC_CentroCusto.Outputs[OLE DB Source Error Output].Columns[idCentroCusto]"
+                          dataType="i4"
+                          lineageId="Package\SEQC_CentroCusto\DFT_CentroCusto\OLE_SRC_CentroCusto.Outputs[OLE DB Source Error Output].Columns[idCentroCusto]"
+                          name="idCentroCusto" />
+                        <outputColumn
+                          refId="Package\SEQC_CentroCusto\DFT_CentroCusto\OLE_SRC_CentroCusto.Outputs[OLE DB Source Error Output].Columns[codigoCentroCusto]"
+                          dataType="wstr"
+                          length="50"
+                          lineageId="Package\SEQC_CentroCusto\DFT_CentroCusto\OLE_SRC_CentroCusto.Outputs[OLE DB Source Error Output].Columns[codigoCentroCusto]"
+                          name="codigoCentroCusto" />
+                        <outputColumn
+                          refId="Package\SEQC_CentroCusto\DFT_CentroCusto\OLE_SRC_CentroCusto.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\SEQC_CentroCusto\DFT_CentroCusto\OLE_SRC_CentroCusto.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\SEQC_CentroCusto\DFT_CentroCusto\OLE_SRC_CentroCusto.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\SEQC_CentroCusto\DFT_CentroCusto\OLE_SRC_CentroCusto.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\SEQC_CentroCusto\DFT_CentroCusto\Row Count"
+                  componentClassID="Microsoft.RowCount"
+                  contactInfo="Row Count;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                  description="Counts rows as they pass through a data flow. For example, use the number of rows processed to determine whether or not to perform cleanup operations, or update text in an e-mail message to communicate processing status."
+                  name="Row Count">
+                  <properties>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable to hold the row count."
+                      name="VariableName">User::rowCountCC</property>
+                  </properties>
+                  <inputs>
+                    <input
+                      refId="Package\SEQC_CentroCusto\DFT_CentroCusto\Row Count.Inputs[Row Count Input 1]"
+                      hasSideEffects="true"
+                      name="Row Count Input 1">
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\SEQC_CentroCusto\DFT_CentroCusto\Row Count.Outputs[Row Count Output 1]"
+                      name="Row Count Output 1"
+                      synchronousInputId="Package\SEQC_CentroCusto\DFT_CentroCusto\Row Count.Inputs[Row Count Input 1]">
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\SEQC_CentroCusto\DFT_CentroCusto.Paths[OLE DB Source Output]"
+                  endId="Package\SEQC_CentroCusto\DFT_CentroCusto\Row Count.Inputs[Row Count Input 1]"
+                  name="OLE DB Source Output"
+                  startId="Package\SEQC_CentroCusto\DFT_CentroCusto\OLE_SRC_CentroCusto.Outputs[OLE DB Source Output]" />
+                <path
+                  refId="Package\SEQC_CentroCusto\DFT_CentroCusto.Paths[Row Count Output 1]"
+                  endId="Package\SEQC_CentroCusto\DFT_CentroCusto\OLE_DST_DWCentroCusto.Inputs[OLE DB Destination Input]"
+                  name="Row Count Output 1"
+                  startId="Package\SEQC_CentroCusto\DFT_CentroCusto\Row Count.Outputs[Row Count Output 1]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\SEQC_CentroCusto\EPT_CentroCusto"
+          DTS:CreationName="Microsoft.ExecutePackageTask"
+          DTS:Description="Execute Package Task"
+          DTS:DTSID="{792FFF93-3DA2-4CC1-A25B-3D962B8662B0}"
+          DTS:ExecutableType="Microsoft.ExecutePackageTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="EPT_CentroCusto"
+          DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ExecutePackageTask>
+              <UseProjectReference>True</UseProjectReference>
+              <PackageName>DwControl.dtsx</PackageName>
+              <ParameterAssignment>
+                <ParameterName>row_Count</ParameterName>
+                <BindedVariableOrParameterName>User::rowCountCC</BindedVariableOrParameterName>
+              </ParameterAssignment>
+              <ParameterAssignment>
+                <ParameterName>tableName</ParameterName>
+                <BindedVariableOrParameterName>User::tableNameCC</BindedVariableOrParameterName>
+              </ParameterAssignment>
+            </ExecutePackageTask>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\SEQC_CentroCusto\SQL_NotFound"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{3DE0662B-9DBA-41FD-B748-AAA6795A1B17}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="SQL_NotFound"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{57D6D694-C0FA-44BF-A876-D3C891EBD1AB}"
+              SQLTask:SqlStatementSource="INSERT INTO [stg2].[CentroCusto] (idCentroCusto, codigoCentroCusto)&#xA;SELECT 208, 'Centro Custo Nao Encontrado'&#xA;WHERE NOT EXISTS (&#xA;    SELECT 1 FROM [stg2].[CentroCusto] WHERE idCentroCusto = 208&#xA;);&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\SEQC_CentroCusto.PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{9E12B6EB-9AC1-428D-A25D-9B04EF7E586E}"
+          DTS:From="Package\SEQC_CentroCusto\SQL_NotFound"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package\SEQC_CentroCusto\DFT_CentroCusto" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\SEQC_CentroCusto.PrecedenceConstraints[Constraint 1]"
+          DTS:CreationName=""
+          DTS:DTSID="{84AFD88D-ED1F-461A-B454-984E7281021B}"
+          DTS:From="Package\SEQC_CentroCusto\DFT_CentroCusto"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 1"
+          DTS:To="Package\SEQC_CentroCusto\EPT_CentroCusto" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\SEQC_Colaboradores"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{0D43BD60-0793-4567-B76F-D273A85D63C4}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="SEQC_Colaboradores">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\SEQC_Colaboradores\DTF_Colaboradores"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Data Flow Task"
+          DTS:DTSID="{EFDFF2B2-F9A0-4BA2-9ADB-FF97CBAE1054}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="DTF_Colaboradores"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\SEQC_Colaboradores\DTF_Colaboradores\OLE_DST_DWColaboradores"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB Destination"
+                  name="OLE_DST_DWColaboradores"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[dw].[Colaboradores]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">3</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\SEQC_Colaboradores\DTF_Colaboradores\OLE_DST_DWColaboradores.Connections[OleDbConnection]"
+                      connectionManagerID="{57D6D694-C0FA-44BF-A876-D3C891EBD1AB}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[DESKTOP-UMHE8LJ_SQLEXPRESS.ARMISDatabase2024]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\SEQC_Colaboradores\DTF_Colaboradores\OLE_DST_DWColaboradores.Inputs[OLE DB Destination Input]"
+                      errorOrTruncationOperation="Insert"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\SEQC_Colaboradores\DTF_Colaboradores\OLE_DST_DWColaboradores.Inputs[OLE DB Destination Input].Columns[codigo]"
+                          cachedDataType="wstr"
+                          cachedLength="50"
+                          cachedName="codigo"
+                          externalMetadataColumnId="Package\SEQC_Colaboradores\DTF_Colaboradores\OLE_DST_DWColaboradores.Inputs[OLE DB Destination Input].ExternalColumns[codigo]"
+                          lineageId="Package\SEQC_Colaboradores\DTF_Colaboradores\OLE_SRC_Colaboradores.Outputs[OLE DB Source Output].Columns[codigo]" />
+                        <inputColumn
+                          refId="Package\SEQC_Colaboradores\DTF_Colaboradores\OLE_DST_DWColaboradores.Inputs[OLE DB Destination Input].Columns[username]"
+                          cachedDataType="wstr"
+                          cachedLength="50"
+                          cachedName="username"
+                          externalMetadataColumnId="Package\SEQC_Colaboradores\DTF_Colaboradores\OLE_DST_DWColaboradores.Inputs[OLE DB Destination Input].ExternalColumns[username]"
+                          lineageId="Package\SEQC_Colaboradores\DTF_Colaboradores\OLE_SRC_Colaboradores.Outputs[OLE DB Source Output].Columns[username]" />
+                        <inputColumn
+                          refId="Package\SEQC_Colaboradores\DTF_Colaboradores\OLE_DST_DWColaboradores.Inputs[OLE DB Destination Input].Columns[nome]"
+                          cachedDataType="wstr"
+                          cachedLength="50"
+                          cachedName="nome"
+                          externalMetadataColumnId="Package\SEQC_Colaboradores\DTF_Colaboradores\OLE_DST_DWColaboradores.Inputs[OLE DB Destination Input].ExternalColumns[nome]"
+                          lineageId="Package\SEQC_Colaboradores\DTF_Colaboradores\OLE_SRC_Colaboradores.Outputs[OLE DB Source Output].Columns[nome]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\SEQC_Colaboradores\DTF_Colaboradores\OLE_DST_DWColaboradores.Inputs[OLE DB Destination Input].ExternalColumns[codigo]"
+                          dataType="wstr"
+                          length="50"
+                          name="codigo" />
+                        <externalMetadataColumn
+                          refId="Package\SEQC_Colaboradores\DTF_Colaboradores\OLE_DST_DWColaboradores.Inputs[OLE DB Destination Input].ExternalColumns[username]"
+                          dataType="wstr"
+                          length="50"
+                          name="username" />
+                        <externalMetadataColumn
+                          refId="Package\SEQC_Colaboradores\DTF_Colaboradores\OLE_DST_DWColaboradores.Inputs[OLE DB Destination Input].ExternalColumns[nome]"
+                          dataType="wstr"
+                          length="50"
+                          name="nome" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\SEQC_Colaboradores\DTF_Colaboradores\OLE_DST_DWColaboradores.Outputs[OLE DB Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Destination Error Output"
+                      synchronousInputId="Package\SEQC_Colaboradores\DTF_Colaboradores\OLE_DST_DWColaboradores.Inputs[OLE DB Destination Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\SEQC_Colaboradores\DTF_Colaboradores\OLE_DST_DWColaboradores.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\SEQC_Colaboradores\DTF_Colaboradores\OLE_DST_DWColaboradores.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\SEQC_Colaboradores\DTF_Colaboradores\OLE_DST_DWColaboradores.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\SEQC_Colaboradores\DTF_Colaboradores\OLE_DST_DWColaboradores.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\SEQC_Colaboradores\DTF_Colaboradores\OLE_SRC_Colaboradores"
+                  componentClassID="Microsoft.OLEDBSource"
+                  contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+                  description="OLE DB Source"
+                  name="OLE_SRC_Colaboradores"
+                  usesDispositions="true"
+                  version="7">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[stg2].[ColaboradoresMerged]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.String"
+                      description="The variable that contains the SQL command to be executed."
+                      name="SqlCommandVariable"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">0</property>
+                    <property
+                      dataType="System.String"
+                      description="The mappings between the parameters in the SQL command and variables."
+                      name="ParameterMapping"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\SEQC_Colaboradores\DTF_Colaboradores\OLE_SRC_Colaboradores.Connections[OleDbConnection]"
+                      connectionManagerID="{57D6D694-C0FA-44BF-A876-D3C891EBD1AB}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[DESKTOP-UMHE8LJ_SQLEXPRESS.ARMISDatabase2024]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\SEQC_Colaboradores\DTF_Colaboradores\OLE_SRC_Colaboradores.Outputs[OLE DB Source Output]"
+                      name="OLE DB Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\SEQC_Colaboradores\DTF_Colaboradores\OLE_SRC_Colaboradores.Outputs[OLE DB Source Output].Columns[codigo]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\SEQC_Colaboradores\DTF_Colaboradores\OLE_SRC_Colaboradores.Outputs[OLE DB Source Output].ExternalColumns[codigo]"
+                          length="50"
+                          lineageId="Package\SEQC_Colaboradores\DTF_Colaboradores\OLE_SRC_Colaboradores.Outputs[OLE DB Source Output].Columns[codigo]"
+                          name="codigo"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\SEQC_Colaboradores\DTF_Colaboradores\OLE_SRC_Colaboradores.Outputs[OLE DB Source Output].Columns[username]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\SEQC_Colaboradores\DTF_Colaboradores\OLE_SRC_Colaboradores.Outputs[OLE DB Source Output].ExternalColumns[username]"
+                          length="50"
+                          lineageId="Package\SEQC_Colaboradores\DTF_Colaboradores\OLE_SRC_Colaboradores.Outputs[OLE DB Source Output].Columns[username]"
+                          name="username"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\SEQC_Colaboradores\DTF_Colaboradores\OLE_SRC_Colaboradores.Outputs[OLE DB Source Output].Columns[nome]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\SEQC_Colaboradores\DTF_Colaboradores\OLE_SRC_Colaboradores.Outputs[OLE DB Source Output].ExternalColumns[nome]"
+                          length="50"
+                          lineageId="Package\SEQC_Colaboradores\DTF_Colaboradores\OLE_SRC_Colaboradores.Outputs[OLE DB Source Output].Columns[nome]"
+                          name="nome"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\SEQC_Colaboradores\DTF_Colaboradores\OLE_SRC_Colaboradores.Outputs[OLE DB Source Output].Columns[idEmpresa]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\SEQC_Colaboradores\DTF_Colaboradores\OLE_SRC_Colaboradores.Outputs[OLE DB Source Output].ExternalColumns[idEmpresa]"
+                          lineageId="Package\SEQC_Colaboradores\DTF_Colaboradores\OLE_SRC_Colaboradores.Outputs[OLE DB Source Output].Columns[idEmpresa]"
+                          name="idEmpresa"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\SEQC_Colaboradores\DTF_Colaboradores\OLE_SRC_Colaboradores.Outputs[OLE DB Source Output].Columns[perfil]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\SEQC_Colaboradores\DTF_Colaboradores\OLE_SRC_Colaboradores.Outputs[OLE DB Source Output].ExternalColumns[perfil]"
+                          length="50"
+                          lineageId="Package\SEQC_Colaboradores\DTF_Colaboradores\OLE_SRC_Colaboradores.Outputs[OLE DB Source Output].Columns[perfil]"
+                          name="perfil"
+                          truncationRowDisposition="FailComponent" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\SEQC_Colaboradores\DTF_Colaboradores\OLE_SRC_Colaboradores.Outputs[OLE DB Source Output].ExternalColumns[codigo]"
+                          dataType="wstr"
+                          length="50"
+                          name="codigo" />
+                        <externalMetadataColumn
+                          refId="Package\SEQC_Colaboradores\DTF_Colaboradores\OLE_SRC_Colaboradores.Outputs[OLE DB Source Output].ExternalColumns[username]"
+                          dataType="wstr"
+                          length="50"
+                          name="username" />
+                        <externalMetadataColumn
+                          refId="Package\SEQC_Colaboradores\DTF_Colaboradores\OLE_SRC_Colaboradores.Outputs[OLE DB Source Output].ExternalColumns[nome]"
+                          dataType="wstr"
+                          length="50"
+                          name="nome" />
+                        <externalMetadataColumn
+                          refId="Package\SEQC_Colaboradores\DTF_Colaboradores\OLE_SRC_Colaboradores.Outputs[OLE DB Source Output].ExternalColumns[idEmpresa]"
+                          dataType="i4"
+                          name="idEmpresa" />
+                        <externalMetadataColumn
+                          refId="Package\SEQC_Colaboradores\DTF_Colaboradores\OLE_SRC_Colaboradores.Outputs[OLE DB Source Output].ExternalColumns[perfil]"
+                          dataType="wstr"
+                          length="50"
+                          name="perfil" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\SEQC_Colaboradores\DTF_Colaboradores\OLE_SRC_Colaboradores.Outputs[OLE DB Source Error Output]"
+                      isErrorOut="true"
+                      name="OLE DB Source Error Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\SEQC_Colaboradores\DTF_Colaboradores\OLE_SRC_Colaboradores.Outputs[OLE DB Source Error Output].Columns[codigo]"
+                          dataType="wstr"
+                          length="50"
+                          lineageId="Package\SEQC_Colaboradores\DTF_Colaboradores\OLE_SRC_Colaboradores.Outputs[OLE DB Source Error Output].Columns[codigo]"
+                          name="codigo" />
+                        <outputColumn
+                          refId="Package\SEQC_Colaboradores\DTF_Colaboradores\OLE_SRC_Colaboradores.Outputs[OLE DB Source Error Output].Columns[username]"
+                          dataType="wstr"
+                          length="50"
+                          lineageId="Package\SEQC_Colaboradores\DTF_Colaboradores\OLE_SRC_Colaboradores.Outputs[OLE DB Source Error Output].Columns[username]"
+                          name="username" />
+                        <outputColumn
+                          refId="Package\SEQC_Colaboradores\DTF_Colaboradores\OLE_SRC_Colaboradores.Outputs[OLE DB Source Error Output].Columns[nome]"
+                          dataType="wstr"
+                          length="50"
+                          lineageId="Package\SEQC_Colaboradores\DTF_Colaboradores\OLE_SRC_Colaboradores.Outputs[OLE DB Source Error Output].Columns[nome]"
+                          name="nome" />
+                        <outputColumn
+                          refId="Package\SEQC_Colaboradores\DTF_Colaboradores\OLE_SRC_Colaboradores.Outputs[OLE DB Source Error Output].Columns[idEmpresa]"
+                          dataType="i4"
+                          lineageId="Package\SEQC_Colaboradores\DTF_Colaboradores\OLE_SRC_Colaboradores.Outputs[OLE DB Source Error Output].Columns[idEmpresa]"
+                          name="idEmpresa" />
+                        <outputColumn
+                          refId="Package\SEQC_Colaboradores\DTF_Colaboradores\OLE_SRC_Colaboradores.Outputs[OLE DB Source Error Output].Columns[perfil]"
+                          dataType="wstr"
+                          length="50"
+                          lineageId="Package\SEQC_Colaboradores\DTF_Colaboradores\OLE_SRC_Colaboradores.Outputs[OLE DB Source Error Output].Columns[perfil]"
+                          name="perfil" />
+                        <outputColumn
+                          refId="Package\SEQC_Colaboradores\DTF_Colaboradores\OLE_SRC_Colaboradores.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\SEQC_Colaboradores\DTF_Colaboradores\OLE_SRC_Colaboradores.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\SEQC_Colaboradores\DTF_Colaboradores\OLE_SRC_Colaboradores.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\SEQC_Colaboradores\DTF_Colaboradores\OLE_SRC_Colaboradores.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\SEQC_Colaboradores\DTF_Colaboradores\Row Count"
+                  componentClassID="Microsoft.RowCount"
+                  contactInfo="Row Count;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                  description="Counts rows as they pass through a data flow. For example, use the number of rows processed to determine whether or not to perform cleanup operations, or update text in an e-mail message to communicate processing status."
+                  name="Row Count">
+                  <properties>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable to hold the row count."
+                      name="VariableName">User::rowCountColaboradores</property>
+                  </properties>
+                  <inputs>
+                    <input
+                      refId="Package\SEQC_Colaboradores\DTF_Colaboradores\Row Count.Inputs[Row Count Input 1]"
+                      hasSideEffects="true"
+                      name="Row Count Input 1">
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\SEQC_Colaboradores\DTF_Colaboradores\Row Count.Outputs[Row Count Output 1]"
+                      name="Row Count Output 1"
+                      synchronousInputId="Package\SEQC_Colaboradores\DTF_Colaboradores\Row Count.Inputs[Row Count Input 1]">
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\SEQC_Colaboradores\DTF_Colaboradores.Paths[OLE DB Source Output]"
+                  endId="Package\SEQC_Colaboradores\DTF_Colaboradores\Row Count.Inputs[Row Count Input 1]"
+                  name="OLE DB Source Output"
+                  startId="Package\SEQC_Colaboradores\DTF_Colaboradores\OLE_SRC_Colaboradores.Outputs[OLE DB Source Output]" />
+                <path
+                  refId="Package\SEQC_Colaboradores\DTF_Colaboradores.Paths[Row Count Output 1]"
+                  endId="Package\SEQC_Colaboradores\DTF_Colaboradores\OLE_DST_DWColaboradores.Inputs[OLE DB Destination Input]"
+                  name="Row Count Output 1"
+                  startId="Package\SEQC_Colaboradores\DTF_Colaboradores\Row Count.Outputs[Row Count Output 1]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\SEQC_Colaboradores\EPT_Colaboradores"
+          DTS:CreationName="Microsoft.ExecutePackageTask"
+          DTS:Description="Execute Package Task"
+          DTS:DTSID="{5A8971AF-9362-4170-BBC2-074552452B2A}"
+          DTS:ExecutableType="Microsoft.ExecutePackageTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="EPT_Colaboradores"
+          DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ExecutePackageTask>
+              <UseProjectReference>True</UseProjectReference>
+              <PackageName>DwControl.dtsx</PackageName>
+              <ParameterAssignment>
+                <ParameterName>row_Count</ParameterName>
+                <BindedVariableOrParameterName>User::rowCountColaboradores</BindedVariableOrParameterName>
+              </ParameterAssignment>
+              <ParameterAssignment>
+                <ParameterName>tableName</ParameterName>
+                <BindedVariableOrParameterName>User::tableNameColaboradores</BindedVariableOrParameterName>
+              </ParameterAssignment>
+            </ExecutePackageTask>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\SEQC_Colaboradores.PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{6A740243-3FCF-4EF9-AECF-35F6596E8220}"
+          DTS:From="Package\SEQC_Colaboradores\DTF_Colaboradores"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package\SEQC_Colaboradores\EPT_Colaboradores" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\SEQC_Empresa"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{9679C0F1-0094-4179-A67D-9FC65FE77155}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="SEQC_Empresa">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\SEQC_Empresa\DFT_Empresa"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Data Flow Task"
+          DTS:DTSID="{2165751F-3377-4325-932F-0CB985B80B1F}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="DFT_Empresa"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\SEQC_Empresa\DFT_Empresa\OLE_DST_DWEmpresa"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB Destination"
+                  name="OLE_DST_DWEmpresa"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[dw].[Empresa]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">3</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\SEQC_Empresa\DFT_Empresa\OLE_DST_DWEmpresa.Connections[OleDbConnection]"
+                      connectionManagerID="{57D6D694-C0FA-44BF-A876-D3C891EBD1AB}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[DESKTOP-UMHE8LJ_SQLEXPRESS.ARMISDatabase2024]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\SEQC_Empresa\DFT_Empresa\OLE_DST_DWEmpresa.Inputs[OLE DB Destination Input]"
+                      errorOrTruncationOperation="Insert"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\SEQC_Empresa\DFT_Empresa\OLE_DST_DWEmpresa.Inputs[OLE DB Destination Input].Columns[id]"
+                          cachedDataType="i4"
+                          cachedName="id"
+                          externalMetadataColumnId="Package\SEQC_Empresa\DFT_Empresa\OLE_DST_DWEmpresa.Inputs[OLE DB Destination Input].ExternalColumns[idEmpresa]"
+                          lineageId="Package\SEQC_Empresa\DFT_Empresa\OLE_SRC_Empresa.Outputs[OLE DB Source Output].Columns[id]" />
+                        <inputColumn
+                          refId="Package\SEQC_Empresa\DFT_Empresa\OLE_DST_DWEmpresa.Inputs[OLE DB Destination Input].Columns[codigo]"
+                          cachedDataType="wstr"
+                          cachedLength="50"
+                          cachedName="codigo"
+                          externalMetadataColumnId="Package\SEQC_Empresa\DFT_Empresa\OLE_DST_DWEmpresa.Inputs[OLE DB Destination Input].ExternalColumns[codigoEmpresa]"
+                          lineageId="Package\SEQC_Empresa\DFT_Empresa\OLE_SRC_Empresa.Outputs[OLE DB Source Output].Columns[codigo]" />
+                        <inputColumn
+                          refId="Package\SEQC_Empresa\DFT_Empresa\OLE_DST_DWEmpresa.Inputs[OLE DB Destination Input].Columns[nome]"
+                          cachedDataType="wstr"
+                          cachedLength="50"
+                          cachedName="nome"
+                          externalMetadataColumnId="Package\SEQC_Empresa\DFT_Empresa\OLE_DST_DWEmpresa.Inputs[OLE DB Destination Input].ExternalColumns[nomeEmpresa]"
+                          lineageId="Package\SEQC_Empresa\DFT_Empresa\OLE_SRC_Empresa.Outputs[OLE DB Source Output].Columns[nome]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\SEQC_Empresa\DFT_Empresa\OLE_DST_DWEmpresa.Inputs[OLE DB Destination Input].ExternalColumns[idEmpresa]"
+                          dataType="i4"
+                          name="idEmpresa" />
+                        <externalMetadataColumn
+                          refId="Package\SEQC_Empresa\DFT_Empresa\OLE_DST_DWEmpresa.Inputs[OLE DB Destination Input].ExternalColumns[codigoEmpresa]"
+                          dataType="wstr"
+                          length="50"
+                          name="codigoEmpresa" />
+                        <externalMetadataColumn
+                          refId="Package\SEQC_Empresa\DFT_Empresa\OLE_DST_DWEmpresa.Inputs[OLE DB Destination Input].ExternalColumns[nomeEmpresa]"
+                          dataType="wstr"
+                          length="100"
+                          name="nomeEmpresa" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\SEQC_Empresa\DFT_Empresa\OLE_DST_DWEmpresa.Outputs[OLE DB Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Destination Error Output"
+                      synchronousInputId="Package\SEQC_Empresa\DFT_Empresa\OLE_DST_DWEmpresa.Inputs[OLE DB Destination Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\SEQC_Empresa\DFT_Empresa\OLE_DST_DWEmpresa.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\SEQC_Empresa\DFT_Empresa\OLE_DST_DWEmpresa.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\SEQC_Empresa\DFT_Empresa\OLE_DST_DWEmpresa.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\SEQC_Empresa\DFT_Empresa\OLE_DST_DWEmpresa.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\SEQC_Empresa\DFT_Empresa\OLE_SRC_Empresa"
+                  componentClassID="Microsoft.OLEDBSource"
+                  contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+                  description="OLE DB Source"
+                  name="OLE_SRC_Empresa"
+                  usesDispositions="true"
+                  version="7">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[stg2].[empresas]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.String"
+                      description="The variable that contains the SQL command to be executed."
+                      name="SqlCommandVariable"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">0</property>
+                    <property
+                      dataType="System.String"
+                      description="The mappings between the parameters in the SQL command and variables."
+                      name="ParameterMapping"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\SEQC_Empresa\DFT_Empresa\OLE_SRC_Empresa.Connections[OleDbConnection]"
+                      connectionManagerID="{57D6D694-C0FA-44BF-A876-D3C891EBD1AB}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[DESKTOP-UMHE8LJ_SQLEXPRESS.ARMISDatabase2024]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\SEQC_Empresa\DFT_Empresa\OLE_SRC_Empresa.Outputs[OLE DB Source Output]"
+                      name="OLE DB Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\SEQC_Empresa\DFT_Empresa\OLE_SRC_Empresa.Outputs[OLE DB Source Output].Columns[codigo]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\SEQC_Empresa\DFT_Empresa\OLE_SRC_Empresa.Outputs[OLE DB Source Output].ExternalColumns[codigo]"
+                          length="50"
+                          lineageId="Package\SEQC_Empresa\DFT_Empresa\OLE_SRC_Empresa.Outputs[OLE DB Source Output].Columns[codigo]"
+                          name="codigo"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\SEQC_Empresa\DFT_Empresa\OLE_SRC_Empresa.Outputs[OLE DB Source Output].Columns[nome]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\SEQC_Empresa\DFT_Empresa\OLE_SRC_Empresa.Outputs[OLE DB Source Output].ExternalColumns[nome]"
+                          length="50"
+                          lineageId="Package\SEQC_Empresa\DFT_Empresa\OLE_SRC_Empresa.Outputs[OLE DB Source Output].Columns[nome]"
+                          name="nome"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\SEQC_Empresa\DFT_Empresa\OLE_SRC_Empresa.Outputs[OLE DB Source Output].Columns[id]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\SEQC_Empresa\DFT_Empresa\OLE_SRC_Empresa.Outputs[OLE DB Source Output].ExternalColumns[id]"
+                          lineageId="Package\SEQC_Empresa\DFT_Empresa\OLE_SRC_Empresa.Outputs[OLE DB Source Output].Columns[id]"
+                          name="id"
+                          truncationRowDisposition="FailComponent" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\SEQC_Empresa\DFT_Empresa\OLE_SRC_Empresa.Outputs[OLE DB Source Output].ExternalColumns[codigo]"
+                          dataType="wstr"
+                          length="50"
+                          name="codigo" />
+                        <externalMetadataColumn
+                          refId="Package\SEQC_Empresa\DFT_Empresa\OLE_SRC_Empresa.Outputs[OLE DB Source Output].ExternalColumns[nome]"
+                          dataType="wstr"
+                          length="50"
+                          name="nome" />
+                        <externalMetadataColumn
+                          refId="Package\SEQC_Empresa\DFT_Empresa\OLE_SRC_Empresa.Outputs[OLE DB Source Output].ExternalColumns[id]"
+                          dataType="i4"
+                          name="id" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\SEQC_Empresa\DFT_Empresa\OLE_SRC_Empresa.Outputs[OLE DB Source Error Output]"
+                      isErrorOut="true"
+                      name="OLE DB Source Error Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\SEQC_Empresa\DFT_Empresa\OLE_SRC_Empresa.Outputs[OLE DB Source Error Output].Columns[codigo]"
+                          dataType="wstr"
+                          length="50"
+                          lineageId="Package\SEQC_Empresa\DFT_Empresa\OLE_SRC_Empresa.Outputs[OLE DB Source Error Output].Columns[codigo]"
+                          name="codigo" />
+                        <outputColumn
+                          refId="Package\SEQC_Empresa\DFT_Empresa\OLE_SRC_Empresa.Outputs[OLE DB Source Error Output].Columns[nome]"
+                          dataType="wstr"
+                          length="50"
+                          lineageId="Package\SEQC_Empresa\DFT_Empresa\OLE_SRC_Empresa.Outputs[OLE DB Source Error Output].Columns[nome]"
+                          name="nome" />
+                        <outputColumn
+                          refId="Package\SEQC_Empresa\DFT_Empresa\OLE_SRC_Empresa.Outputs[OLE DB Source Error Output].Columns[id]"
+                          dataType="i4"
+                          lineageId="Package\SEQC_Empresa\DFT_Empresa\OLE_SRC_Empresa.Outputs[OLE DB Source Error Output].Columns[id]"
+                          name="id" />
+                        <outputColumn
+                          refId="Package\SEQC_Empresa\DFT_Empresa\OLE_SRC_Empresa.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\SEQC_Empresa\DFT_Empresa\OLE_SRC_Empresa.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\SEQC_Empresa\DFT_Empresa\OLE_SRC_Empresa.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\SEQC_Empresa\DFT_Empresa\OLE_SRC_Empresa.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\SEQC_Empresa\DFT_Empresa\Row Count"
+                  componentClassID="Microsoft.RowCount"
+                  contactInfo="Row Count;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                  description="Counts rows as they pass through a data flow. For example, use the number of rows processed to determine whether or not to perform cleanup operations, or update text in an e-mail message to communicate processing status."
+                  name="Row Count">
+                  <properties>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable to hold the row count."
+                      name="VariableName">User::rowCountEmpresa</property>
+                  </properties>
+                  <inputs>
+                    <input
+                      refId="Package\SEQC_Empresa\DFT_Empresa\Row Count.Inputs[Row Count Input 1]"
+                      hasSideEffects="true"
+                      name="Row Count Input 1">
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\SEQC_Empresa\DFT_Empresa\Row Count.Outputs[Row Count Output 1]"
+                      name="Row Count Output 1"
+                      synchronousInputId="Package\SEQC_Empresa\DFT_Empresa\Row Count.Inputs[Row Count Input 1]">
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\SEQC_Empresa\DFT_Empresa.Paths[OLE DB Source Output]"
+                  endId="Package\SEQC_Empresa\DFT_Empresa\Row Count.Inputs[Row Count Input 1]"
+                  name="OLE DB Source Output"
+                  startId="Package\SEQC_Empresa\DFT_Empresa\OLE_SRC_Empresa.Outputs[OLE DB Source Output]" />
+                <path
+                  refId="Package\SEQC_Empresa\DFT_Empresa.Paths[Row Count Output 1]"
+                  endId="Package\SEQC_Empresa\DFT_Empresa\OLE_DST_DWEmpresa.Inputs[OLE DB Destination Input]"
+                  name="Row Count Output 1"
+                  startId="Package\SEQC_Empresa\DFT_Empresa\Row Count.Outputs[Row Count Output 1]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\SEQC_Empresa\EPT_Empresa"
+          DTS:CreationName="Microsoft.ExecutePackageTask"
+          DTS:Description="Execute Package Task"
+          DTS:DTSID="{6046CD6F-1BA4-455C-8C21-3AA11CFA13E6}"
+          DTS:ExecutableType="Microsoft.ExecutePackageTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="EPT_Empresa"
+          DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ExecutePackageTask>
+              <UseProjectReference>True</UseProjectReference>
+              <PackageName>DwControl.dtsx</PackageName>
+              <ParameterAssignment>
+                <ParameterName>row_Count</ParameterName>
+                <BindedVariableOrParameterName>User::rowCountEmpresa</BindedVariableOrParameterName>
+              </ParameterAssignment>
+              <ParameterAssignment>
+                <ParameterName>tableName</ParameterName>
+                <BindedVariableOrParameterName>User::tableNameEmpresa</BindedVariableOrParameterName>
+              </ParameterAssignment>
+            </ExecutePackageTask>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\SEQC_Empresa\SQL_NotFound"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{E645C285-EFCA-4C5D-B9E5-B5F110C59241}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="SQL_NotFound"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{57D6D694-C0FA-44BF-A876-D3C891EBD1AB}"
+              SQLTask:SqlStatementSource="&#xA;&#xA;INSERT INTO [stg2].[empresas] (id, nome, codigo)&#xA;SELECT 14, 'Empresa nao encontrada', 'Empresa nao encontrada'&#xA;WHERE NOT EXISTS (&#xA;    SELECT 1 FROM [stg2].[empresas] WHERE id = 14&#xA;);&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\SEQC_Empresa.PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{91E225BE-7E76-4170-8DAF-624D4CD1B0F5}"
+          DTS:From="Package\SEQC_Empresa\SQL_NotFound"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package\SEQC_Empresa\DFT_Empresa" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\SEQC_Empresa.PrecedenceConstraints[Constraint 1]"
+          DTS:CreationName=""
+          DTS:DTSID="{E9A93C91-F15E-474A-8416-0CD291543283}"
+          DTS:From="Package\SEQC_Empresa\DFT_Empresa"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 1"
+          DTS:To="Package\SEQC_Empresa\EPT_Empresa" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\SEQC_Perfil"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{179C1077-F2E9-401E-B0FF-350EE97BCF84}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="SEQC_Perfil">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\SEQC_Perfil\DFT_Perfil"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Data Flow Task"
+          DTS:DTSID="{653162D0-A409-4BB2-B901-CFBF37246F7F}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="DFT_Perfil"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\SEQC_Perfil\DFT_Perfil\CNT_Perfil"
+                  componentClassID="Microsoft.RowCount"
+                  contactInfo="Row Count;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                  description="Counts rows as they pass through a data flow. For example, use the number of rows processed to determine whether or not to perform cleanup operations, or update text in an e-mail message to communicate processing status."
+                  name="CNT_Perfil">
+                  <properties>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable to hold the row count."
+                      name="VariableName">User::rowCountPerfil</property>
+                  </properties>
+                  <inputs>
+                    <input
+                      refId="Package\SEQC_Perfil\DFT_Perfil\CNT_Perfil.Inputs[Row Count Input 1]"
+                      hasSideEffects="true"
+                      name="Row Count Input 1">
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\SEQC_Perfil\DFT_Perfil\CNT_Perfil.Outputs[Row Count Output 1]"
+                      name="Row Count Output 1"
+                      synchronousInputId="Package\SEQC_Perfil\DFT_Perfil\CNT_Perfil.Inputs[Row Count Input 1]">
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\SEQC_Perfil\DFT_Perfil\OLE_DST_DWPerfil"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB Destination"
+                  name="OLE_DST_DWPerfil"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[dw].[Perfil]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">3</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\SEQC_Perfil\DFT_Perfil\OLE_DST_DWPerfil.Connections[OleDbConnection]"
+                      connectionManagerID="{57D6D694-C0FA-44BF-A876-D3C891EBD1AB}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[DESKTOP-UMHE8LJ_SQLEXPRESS.ARMISDatabase2024]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\SEQC_Perfil\DFT_Perfil\OLE_DST_DWPerfil.Inputs[OLE DB Destination Input]"
+                      errorOrTruncationOperation="Insert"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\SEQC_Perfil\DFT_Perfil\OLE_DST_DWPerfil.Inputs[OLE DB Destination Input].Columns[Perfil]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="150"
+                          cachedName="Perfil"
+                          externalMetadataColumnId="Package\SEQC_Perfil\DFT_Perfil\OLE_DST_DWPerfil.Inputs[OLE DB Destination Input].ExternalColumns[titulo]"
+                          lineageId="Package\SEQC_Perfil\DFT_Perfil\OLE_SRC_Perfil.Outputs[OLE DB Source Output].Columns[Perfil]" />
+                        <inputColumn
+                          refId="Package\SEQC_Perfil\DFT_Perfil\OLE_DST_DWPerfil.Inputs[OLE DB Destination Input].Columns[idPerfil]"
+                          cachedDataType="i4"
+                          cachedName="idPerfil"
+                          externalMetadataColumnId="Package\SEQC_Perfil\DFT_Perfil\OLE_DST_DWPerfil.Inputs[OLE DB Destination Input].ExternalColumns[idPerfil]"
+                          lineageId="Package\SEQC_Perfil\DFT_Perfil\OLE_SRC_Perfil.Outputs[OLE DB Source Output].Columns[idPerfil]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\SEQC_Perfil\DFT_Perfil\OLE_DST_DWPerfil.Inputs[OLE DB Destination Input].ExternalColumns[idPerfil]"
+                          dataType="i4"
+                          name="idPerfil" />
+                        <externalMetadataColumn
+                          refId="Package\SEQC_Perfil\DFT_Perfil\OLE_DST_DWPerfil.Inputs[OLE DB Destination Input].ExternalColumns[titulo]"
+                          codePage="1252"
+                          dataType="str"
+                          length="150"
+                          name="titulo" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\SEQC_Perfil\DFT_Perfil\OLE_DST_DWPerfil.Outputs[OLE DB Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Destination Error Output"
+                      synchronousInputId="Package\SEQC_Perfil\DFT_Perfil\OLE_DST_DWPerfil.Inputs[OLE DB Destination Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\SEQC_Perfil\DFT_Perfil\OLE_DST_DWPerfil.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\SEQC_Perfil\DFT_Perfil\OLE_DST_DWPerfil.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\SEQC_Perfil\DFT_Perfil\OLE_DST_DWPerfil.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\SEQC_Perfil\DFT_Perfil\OLE_DST_DWPerfil.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\SEQC_Perfil\DFT_Perfil\OLE_SRC_Perfil"
+                  componentClassID="Microsoft.OLEDBSource"
+                  contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+                  description="OLE DB Source"
+                  name="OLE_SRC_Perfil"
+                  usesDispositions="true"
+                  version="7">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[stg2].[perfil]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.String"
+                      description="The variable that contains the SQL command to be executed."
+                      name="SqlCommandVariable"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">0</property>
+                    <property
+                      dataType="System.String"
+                      description="The mappings between the parameters in the SQL command and variables."
+                      name="ParameterMapping"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\SEQC_Perfil\DFT_Perfil\OLE_SRC_Perfil.Connections[OleDbConnection]"
+                      connectionManagerID="{57D6D694-C0FA-44BF-A876-D3C891EBD1AB}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[DESKTOP-UMHE8LJ_SQLEXPRESS.ARMISDatabase2024]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\SEQC_Perfil\DFT_Perfil\OLE_SRC_Perfil.Outputs[OLE DB Source Output]"
+                      name="OLE DB Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\SEQC_Perfil\DFT_Perfil\OLE_SRC_Perfil.Outputs[OLE DB Source Output].Columns[idPerfil]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\SEQC_Perfil\DFT_Perfil\OLE_SRC_Perfil.Outputs[OLE DB Source Output].ExternalColumns[idPerfil]"
+                          lineageId="Package\SEQC_Perfil\DFT_Perfil\OLE_SRC_Perfil.Outputs[OLE DB Source Output].Columns[idPerfil]"
+                          name="idPerfil"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\SEQC_Perfil\DFT_Perfil\OLE_SRC_Perfil.Outputs[OLE DB Source Output].Columns[Perfil]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\SEQC_Perfil\DFT_Perfil\OLE_SRC_Perfil.Outputs[OLE DB Source Output].ExternalColumns[Perfil]"
+                          length="150"
+                          lineageId="Package\SEQC_Perfil\DFT_Perfil\OLE_SRC_Perfil.Outputs[OLE DB Source Output].Columns[Perfil]"
+                          name="Perfil"
+                          truncationRowDisposition="FailComponent" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\SEQC_Perfil\DFT_Perfil\OLE_SRC_Perfil.Outputs[OLE DB Source Output].ExternalColumns[idPerfil]"
+                          dataType="i4"
+                          name="idPerfil" />
+                        <externalMetadataColumn
+                          refId="Package\SEQC_Perfil\DFT_Perfil\OLE_SRC_Perfil.Outputs[OLE DB Source Output].ExternalColumns[Perfil]"
+                          codePage="1252"
+                          dataType="str"
+                          length="150"
+                          name="Perfil" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\SEQC_Perfil\DFT_Perfil\OLE_SRC_Perfil.Outputs[OLE DB Source Error Output]"
+                      isErrorOut="true"
+                      name="OLE DB Source Error Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\SEQC_Perfil\DFT_Perfil\OLE_SRC_Perfil.Outputs[OLE DB Source Error Output].Columns[idPerfil]"
+                          dataType="i4"
+                          lineageId="Package\SEQC_Perfil\DFT_Perfil\OLE_SRC_Perfil.Outputs[OLE DB Source Error Output].Columns[idPerfil]"
+                          name="idPerfil" />
+                        <outputColumn
+                          refId="Package\SEQC_Perfil\DFT_Perfil\OLE_SRC_Perfil.Outputs[OLE DB Source Error Output].Columns[Perfil]"
+                          codePage="1252"
+                          dataType="str"
+                          length="150"
+                          lineageId="Package\SEQC_Perfil\DFT_Perfil\OLE_SRC_Perfil.Outputs[OLE DB Source Error Output].Columns[Perfil]"
+                          name="Perfil" />
+                        <outputColumn
+                          refId="Package\SEQC_Perfil\DFT_Perfil\OLE_SRC_Perfil.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\SEQC_Perfil\DFT_Perfil\OLE_SRC_Perfil.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\SEQC_Perfil\DFT_Perfil\OLE_SRC_Perfil.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\SEQC_Perfil\DFT_Perfil\OLE_SRC_Perfil.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\SEQC_Perfil\DFT_Perfil.Paths[OLE DB Source Output]"
+                  endId="Package\SEQC_Perfil\DFT_Perfil\CNT_Perfil.Inputs[Row Count Input 1]"
+                  name="OLE DB Source Output"
+                  startId="Package\SEQC_Perfil\DFT_Perfil\OLE_SRC_Perfil.Outputs[OLE DB Source Output]" />
+                <path
+                  refId="Package\SEQC_Perfil\DFT_Perfil.Paths[Row Count Output 1]"
+                  endId="Package\SEQC_Perfil\DFT_Perfil\OLE_DST_DWPerfil.Inputs[OLE DB Destination Input]"
+                  name="Row Count Output 1"
+                  startId="Package\SEQC_Perfil\DFT_Perfil\CNT_Perfil.Outputs[Row Count Output 1]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\SEQC_Perfil\EPT_Perfil"
+          DTS:CreationName="Microsoft.ExecutePackageTask"
+          DTS:Description="Execute Package Task"
+          DTS:DTSID="{DB570133-5673-43C3-9FC7-CA0808A4FDDA}"
+          DTS:ExecutableType="Microsoft.ExecutePackageTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="EPT_Perfil"
+          DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ExecutePackageTask>
+              <UseProjectReference>True</UseProjectReference>
+              <PackageName>DwControl.dtsx</PackageName>
+              <ParameterAssignment>
+                <ParameterName>row_Count</ParameterName>
+                <BindedVariableOrParameterName>User::rowCountPerfil</BindedVariableOrParameterName>
+              </ParameterAssignment>
+              <ParameterAssignment>
+                <ParameterName>tableName</ParameterName>
+                <BindedVariableOrParameterName>User::tableNamePerfil</BindedVariableOrParameterName>
+              </ParameterAssignment>
+            </ExecutePackageTask>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\SEQC_Perfil\SQL_NotFoundRow"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{E1FCDB29-5603-4BA1-B552-5A41A01B709D}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="SQL_NotFoundRow"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{57D6D694-C0FA-44BF-A876-D3C891EBD1AB}"
+              SQLTask:SqlStatementSource="IF NOT EXISTS (SELECT 1 FROM [stg2].[perfil] WHERE Perfil = 'Perfil Nao Encontrado')&#xA;BEGIN&#xA;    INSERT INTO [stg2].[perfil] (Perfil)&#xA;    VALUES ('Perfil Nao Encontrado');&#xA;END&#xA;&#xA;SELECT idPerfil FROM [stg2].[perfil] WHERE Perfil = 'Perfil Nao Encontrado';&#xA;"
+              SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ResultBinding
+                SQLTask:ResultName="idPerfil"
+                SQLTask:DtsVariableName="User::perfilNaoEncntradoLocal" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\SEQC_Perfil.PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{45799D51-F008-4028-82DE-C67E2E3F2589}"
+          DTS:From="Package\SEQC_Perfil\SQL_NotFoundRow"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package\SEQC_Perfil\DFT_Perfil" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\SEQC_Perfil.PrecedenceConstraints[Constraint 1]"
+          DTS:CreationName=""
+          DTS:DTSID="{7070AEB8-8643-4CB5-912B-F959DC694D35}"
+          DTS:From="Package\SEQC_Perfil\DFT_Perfil"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 1"
+          DTS:To="Package\SEQC_Perfil\EPT_Perfil" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\SEQC_Projeto"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{B75C9FE6-A13C-4201-A029-434E49376E77}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="SEQC_Projeto">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\SEQC_Projeto\DFT_Projeto"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Data Flow Task"
+          DTS:DTSID="{62342A51-31F4-4121-BFF8-63E2F92650EF}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="DFT_Projeto"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\SEQC_Projeto\DFT_Projeto\OLE_DST_DWProjeto"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB Destination"
+                  name="OLE_DST_DWProjeto"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[dw].[Projeto]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">3</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\SEQC_Projeto\DFT_Projeto\OLE_DST_DWProjeto.Connections[OleDbConnection]"
+                      connectionManagerID="{57D6D694-C0FA-44BF-A876-D3C891EBD1AB}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[DESKTOP-UMHE8LJ_SQLEXPRESS.ARMISDatabase2024]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\SEQC_Projeto\DFT_Projeto\OLE_DST_DWProjeto.Inputs[OLE DB Destination Input]"
+                      errorOrTruncationOperation="Insert"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\SEQC_Projeto\DFT_Projeto\OLE_DST_DWProjeto.Inputs[OLE DB Destination Input].Columns[idProjeto]"
+                          cachedDataType="i4"
+                          cachedName="idProjeto"
+                          externalMetadataColumnId="Package\SEQC_Projeto\DFT_Projeto\OLE_DST_DWProjeto.Inputs[OLE DB Destination Input].ExternalColumns[idProjeto]"
+                          lineageId="Package\SEQC_Projeto\DFT_Projeto\OLE_SRC_Projeto.Outputs[OLE DB Source Output].Columns[idProjeto]" />
+                        <inputColumn
+                          refId="Package\SEQC_Projeto\DFT_Projeto\OLE_DST_DWProjeto.Inputs[OLE DB Destination Input].Columns[codigoProjeto]"
+                          cachedDataType="wstr"
+                          cachedLength="50"
+                          cachedName="codigoProjeto"
+                          externalMetadataColumnId="Package\SEQC_Projeto\DFT_Projeto\OLE_DST_DWProjeto.Inputs[OLE DB Destination Input].ExternalColumns[codigoProjeto]"
+                          lineageId="Package\SEQC_Projeto\DFT_Projeto\OLE_SRC_Projeto.Outputs[OLE DB Source Output].Columns[codigoProjeto]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\SEQC_Projeto\DFT_Projeto\OLE_DST_DWProjeto.Inputs[OLE DB Destination Input].ExternalColumns[idProjeto]"
+                          dataType="i4"
+                          name="idProjeto" />
+                        <externalMetadataColumn
+                          refId="Package\SEQC_Projeto\DFT_Projeto\OLE_DST_DWProjeto.Inputs[OLE DB Destination Input].ExternalColumns[codigoProjeto]"
+                          dataType="wstr"
+                          length="50"
+                          name="codigoProjeto" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\SEQC_Projeto\DFT_Projeto\OLE_DST_DWProjeto.Outputs[OLE DB Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Destination Error Output"
+                      synchronousInputId="Package\SEQC_Projeto\DFT_Projeto\OLE_DST_DWProjeto.Inputs[OLE DB Destination Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\SEQC_Projeto\DFT_Projeto\OLE_DST_DWProjeto.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\SEQC_Projeto\DFT_Projeto\OLE_DST_DWProjeto.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\SEQC_Projeto\DFT_Projeto\OLE_DST_DWProjeto.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\SEQC_Projeto\DFT_Projeto\OLE_DST_DWProjeto.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\SEQC_Projeto\DFT_Projeto\OLE_SRC_Projeto"
+                  componentClassID="Microsoft.OLEDBSource"
+                  contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+                  description="OLE DB Source"
+                  name="OLE_SRC_Projeto"
+                  usesDispositions="true"
+                  version="7">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[stg2].[projetos]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.String"
+                      description="The variable that contains the SQL command to be executed."
+                      name="SqlCommandVariable"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">0</property>
+                    <property
+                      dataType="System.String"
+                      description="The mappings between the parameters in the SQL command and variables."
+                      name="ParameterMapping"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\SEQC_Projeto\DFT_Projeto\OLE_SRC_Projeto.Connections[OleDbConnection]"
+                      connectionManagerID="{57D6D694-C0FA-44BF-A876-D3C891EBD1AB}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[DESKTOP-UMHE8LJ_SQLEXPRESS.ARMISDatabase2024]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\SEQC_Projeto\DFT_Projeto\OLE_SRC_Projeto.Outputs[OLE DB Source Output]"
+                      name="OLE DB Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\SEQC_Projeto\DFT_Projeto\OLE_SRC_Projeto.Outputs[OLE DB Source Output].Columns[idProjeto]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\SEQC_Projeto\DFT_Projeto\OLE_SRC_Projeto.Outputs[OLE DB Source Output].ExternalColumns[idProjeto]"
+                          lineageId="Package\SEQC_Projeto\DFT_Projeto\OLE_SRC_Projeto.Outputs[OLE DB Source Output].Columns[idProjeto]"
+                          name="idProjeto"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\SEQC_Projeto\DFT_Projeto\OLE_SRC_Projeto.Outputs[OLE DB Source Output].Columns[codigoProjeto]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\SEQC_Projeto\DFT_Projeto\OLE_SRC_Projeto.Outputs[OLE DB Source Output].ExternalColumns[codigoProjeto]"
+                          length="50"
+                          lineageId="Package\SEQC_Projeto\DFT_Projeto\OLE_SRC_Projeto.Outputs[OLE DB Source Output].Columns[codigoProjeto]"
+                          name="codigoProjeto"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\SEQC_Projeto\DFT_Projeto\OLE_SRC_Projeto.Outputs[OLE DB Source Output].Columns[departamento]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\SEQC_Projeto\DFT_Projeto\OLE_SRC_Projeto.Outputs[OLE DB Source Output].ExternalColumns[departamento]"
+                          length="200"
+                          lineageId="Package\SEQC_Projeto\DFT_Projeto\OLE_SRC_Projeto.Outputs[OLE DB Source Output].Columns[departamento]"
+                          name="departamento"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\SEQC_Projeto\DFT_Projeto\OLE_SRC_Projeto.Outputs[OLE DB Source Output].Columns[idEmpresa]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\SEQC_Projeto\DFT_Projeto\OLE_SRC_Projeto.Outputs[OLE DB Source Output].ExternalColumns[idEmpresa]"
+                          lineageId="Package\SEQC_Projeto\DFT_Projeto\OLE_SRC_Projeto.Outputs[OLE DB Source Output].Columns[idEmpresa]"
+                          name="idEmpresa"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\SEQC_Projeto\DFT_Projeto\OLE_SRC_Projeto.Outputs[OLE DB Source Output].Columns[centroCusto]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\SEQC_Projeto\DFT_Projeto\OLE_SRC_Projeto.Outputs[OLE DB Source Output].ExternalColumns[centroCusto]"
+                          length="50"
+                          lineageId="Package\SEQC_Projeto\DFT_Projeto\OLE_SRC_Projeto.Outputs[OLE DB Source Output].Columns[centroCusto]"
+                          name="centroCusto"
+                          truncationRowDisposition="FailComponent" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\SEQC_Projeto\DFT_Projeto\OLE_SRC_Projeto.Outputs[OLE DB Source Output].ExternalColumns[idProjeto]"
+                          dataType="i4"
+                          name="idProjeto" />
+                        <externalMetadataColumn
+                          refId="Package\SEQC_Projeto\DFT_Projeto\OLE_SRC_Projeto.Outputs[OLE DB Source Output].ExternalColumns[codigoProjeto]"
+                          dataType="wstr"
+                          length="50"
+                          name="codigoProjeto" />
+                        <externalMetadataColumn
+                          refId="Package\SEQC_Projeto\DFT_Projeto\OLE_SRC_Projeto.Outputs[OLE DB Source Output].ExternalColumns[departamento]"
+                          dataType="wstr"
+                          length="200"
+                          name="departamento" />
+                        <externalMetadataColumn
+                          refId="Package\SEQC_Projeto\DFT_Projeto\OLE_SRC_Projeto.Outputs[OLE DB Source Output].ExternalColumns[idEmpresa]"
+                          dataType="i4"
+                          name="idEmpresa" />
+                        <externalMetadataColumn
+                          refId="Package\SEQC_Projeto\DFT_Projeto\OLE_SRC_Projeto.Outputs[OLE DB Source Output].ExternalColumns[centroCusto]"
+                          dataType="wstr"
+                          length="50"
+                          name="centroCusto" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\SEQC_Projeto\DFT_Projeto\OLE_SRC_Projeto.Outputs[OLE DB Source Error Output]"
+                      isErrorOut="true"
+                      name="OLE DB Source Error Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\SEQC_Projeto\DFT_Projeto\OLE_SRC_Projeto.Outputs[OLE DB Source Error Output].Columns[idProjeto]"
+                          dataType="i4"
+                          lineageId="Package\SEQC_Projeto\DFT_Projeto\OLE_SRC_Projeto.Outputs[OLE DB Source Error Output].Columns[idProjeto]"
+                          name="idProjeto" />
+                        <outputColumn
+                          refId="Package\SEQC_Projeto\DFT_Projeto\OLE_SRC_Projeto.Outputs[OLE DB Source Error Output].Columns[codigoProjeto]"
+                          dataType="wstr"
+                          length="50"
+                          lineageId="Package\SEQC_Projeto\DFT_Projeto\OLE_SRC_Projeto.Outputs[OLE DB Source Error Output].Columns[codigoProjeto]"
+                          name="codigoProjeto" />
+                        <outputColumn
+                          refId="Package\SEQC_Projeto\DFT_Projeto\OLE_SRC_Projeto.Outputs[OLE DB Source Error Output].Columns[departamento]"
+                          dataType="wstr"
+                          length="200"
+                          lineageId="Package\SEQC_Projeto\DFT_Projeto\OLE_SRC_Projeto.Outputs[OLE DB Source Error Output].Columns[departamento]"
+                          name="departamento" />
+                        <outputColumn
+                          refId="Package\SEQC_Projeto\DFT_Projeto\OLE_SRC_Projeto.Outputs[OLE DB Source Error Output].Columns[idEmpresa]"
+                          dataType="i4"
+                          lineageId="Package\SEQC_Projeto\DFT_Projeto\OLE_SRC_Projeto.Outputs[OLE DB Source Error Output].Columns[idEmpresa]"
+                          name="idEmpresa" />
+                        <outputColumn
+                          refId="Package\SEQC_Projeto\DFT_Projeto\OLE_SRC_Projeto.Outputs[OLE DB Source Error Output].Columns[centroCusto]"
+                          dataType="wstr"
+                          length="50"
+                          lineageId="Package\SEQC_Projeto\DFT_Projeto\OLE_SRC_Projeto.Outputs[OLE DB Source Error Output].Columns[centroCusto]"
+                          name="centroCusto" />
+                        <outputColumn
+                          refId="Package\SEQC_Projeto\DFT_Projeto\OLE_SRC_Projeto.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\SEQC_Projeto\DFT_Projeto\OLE_SRC_Projeto.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\SEQC_Projeto\DFT_Projeto\OLE_SRC_Projeto.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\SEQC_Projeto\DFT_Projeto\OLE_SRC_Projeto.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\SEQC_Projeto\DFT_Projeto\Row Count"
+                  componentClassID="Microsoft.RowCount"
+                  contactInfo="Row Count;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                  description="Counts rows as they pass through a data flow. For example, use the number of rows processed to determine whether or not to perform cleanup operations, or update text in an e-mail message to communicate processing status."
+                  name="Row Count">
+                  <properties>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable to hold the row count."
+                      name="VariableName">User::rowCountProjeto</property>
+                  </properties>
+                  <inputs>
+                    <input
+                      refId="Package\SEQC_Projeto\DFT_Projeto\Row Count.Inputs[Row Count Input 1]"
+                      hasSideEffects="true"
+                      name="Row Count Input 1">
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\SEQC_Projeto\DFT_Projeto\Row Count.Outputs[Row Count Output 1]"
+                      name="Row Count Output 1"
+                      synchronousInputId="Package\SEQC_Projeto\DFT_Projeto\Row Count.Inputs[Row Count Input 1]">
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\SEQC_Projeto\DFT_Projeto.Paths[OLE DB Source Output]"
+                  endId="Package\SEQC_Projeto\DFT_Projeto\Row Count.Inputs[Row Count Input 1]"
+                  name="OLE DB Source Output"
+                  startId="Package\SEQC_Projeto\DFT_Projeto\OLE_SRC_Projeto.Outputs[OLE DB Source Output]" />
+                <path
+                  refId="Package\SEQC_Projeto\DFT_Projeto.Paths[Row Count Output 1]"
+                  endId="Package\SEQC_Projeto\DFT_Projeto\OLE_DST_DWProjeto.Inputs[OLE DB Destination Input]"
+                  name="Row Count Output 1"
+                  startId="Package\SEQC_Projeto\DFT_Projeto\Row Count.Outputs[Row Count Output 1]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\SEQC_Projeto\EPT_Projeto"
+          DTS:CreationName="Microsoft.ExecutePackageTask"
+          DTS:Description="Execute Package Task"
+          DTS:DTSID="{EEF385D4-65F7-4248-8007-D92EDED4C4A8}"
+          DTS:ExecutableType="Microsoft.ExecutePackageTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="EPT_Projeto"
+          DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ExecutePackageTask>
+              <UseProjectReference>True</UseProjectReference>
+              <PackageName>DwControl.dtsx</PackageName>
+              <ParameterAssignment>
+                <ParameterName>row_Count</ParameterName>
+                <BindedVariableOrParameterName>User::rowCountProjeto</BindedVariableOrParameterName>
+              </ParameterAssignment>
+              <ParameterAssignment>
+                <ParameterName>tableName</ParameterName>
+                <BindedVariableOrParameterName>User::tableNameProjeto</BindedVariableOrParameterName>
+              </ParameterAssignment>
+            </ExecutePackageTask>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\SEQC_Projeto.PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{CAFA2179-0824-40D4-805F-87849B6225C5}"
+          DTS:From="Package\SEQC_Projeto\DFT_Projeto"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package\SEQC_Projeto\EPT_Projeto" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{5DE3272E-2D29-4F53-98DC-2B1DC86E9879}"
+      DTS:From="Package\SEQC_Colaboradores"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\SEQC_CentroCusto" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
+      DTS:CreationName=""
+      DTS:DTSID="{A15F7827-C0B7-44A7-8071-CF82A9D3235E}"
+      DTS:From="Package\SEQC_CentroCusto"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 2"
+      DTS:To="Package\SEQC_Projeto" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 3]"
+      DTS:CreationName=""
+      DTS:DTSID="{6D018399-1EA4-4F53-8F4E-02C60B8EA5D5}"
+      DTS:From="Package\SEQC_Projeto"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 3"
+      DTS:To="Package\SEQC_Empresa" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 4]"
+      DTS:CreationName=""
+      DTS:DTSID="{80BC8C86-E0F7-4681-82D2-350076CC8C33}"
+      DTS:From="Package\SEQC_Empresa"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 4"
+      DTS:To="Package\SEQC_Perfil" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 5]"
+      DTS:CreationName=""
+      DTS:DTSID="{3A58A636-47A1-4ABD-A903-E30D92141DBD}"
+      DTS:From="Package\SEQC_Perfil"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 5"
+      DTS:To="Package\SEQC_Calendario" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="64" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="170,42"
+          Id="Package\SEQC_Calendario\Execute SQL Task"
+          TopLeft="67.1428571428571,80.5714285714286" />
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="295,247"
+          Size="295,290"
+          Id="Package\SEQC_Calendario"
+          TopLeft="1189.71428571429,611.857142857143" />
+        <NodeLayout
+          Size="168,42"
+          Id="Package\SEQC_CentroCusto\DFT_CentroCusto"
+          TopLeft="75.3333333333333,102" />
+        <NodeLayout
+          Size="168,42"
+          Id="Package\SEQC_CentroCusto\EPT_CentroCusto"
+          TopLeft="74.9166666666667,190.369047619047" />
+        <NodeLayout
+          Size="155,42"
+          Id="Package\SEQC_CentroCusto\SQL_NotFound"
+          TopLeft="89.6666666666667,37.1666666666667" />
+        <EdgeLayout
+          Id="Package\SEQC_CentroCusto.PrecedenceConstraints[Constraint]"
+          TopLeft="163.25,79.1666666666667">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,22.8333333333333"
+              Start="0,0"
+              End="0,15.3333333333333">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,15.3333333333333" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\SEQC_CentroCusto.PrecedenceConstraints[Constraint 1]"
+          TopLeft="159.125,144">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,46.3690476190473"
+              Start="0,0"
+              End="0,38.8690476190473">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,38.8690476190473" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="328,287"
+          Size="328,330"
+          Id="Package\SEQC_CentroCusto"
+          TopLeft="829.503968253968,234.146825396827" />
+        <NodeLayout
+          Size="179,42"
+          Id="Package\SEQC_Colaboradores\DTF_Colaboradores"
+          TopLeft="68.6666666666665,40.3333333333333" />
+        <NodeLayout
+          Size="179,42"
+          Id="Package\SEQC_Colaboradores\EPT_Colaboradores"
+          TopLeft="62.0952380952381,129.047619047618" />
+        <EdgeLayout
+          Id="Package\SEQC_Colaboradores.PrecedenceConstraints[Constraint]"
+          TopLeft="154.880952380952,82.3333333333333">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,46.714285714285"
+              Start="0,0"
+              End="0,39.214285714285">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,39.214285714285" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="315,226"
+          Size="315,269"
+          Id="Package\SEQC_Colaboradores"
+          TopLeft="413.484126984127,241.805555555555" />
+        <NodeLayout
+          Size="150,42"
+          Id="Package\SEQC_Empresa\DFT_Empresa"
+          TopLeft="41.3333333333333,97.6666666666666" />
+        <NodeLayout
+          Size="150,42"
+          Id="Package\SEQC_Empresa\EPT_Empresa"
+          TopLeft="46.4444444444445,181.777777777779" />
+        <NodeLayout
+          Size="155,42"
+          Id="Package\SEQC_Empresa\SQL_NotFound"
+          TopLeft="41.3333333333334,21" />
+        <EdgeLayout
+          Id="Package\SEQC_Empresa.PrecedenceConstraints[Constraint]"
+          TopLeft="117.583333333333,63">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,34.6666666666666"
+              Start="0,0"
+              End="0,27.1666666666666">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,27.1666666666666" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\SEQC_Empresa.PrecedenceConstraints[Constraint 1]"
+          TopLeft="118.888888888889,139.666666666667">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,42.111111111112"
+              Start="0,0"
+              End="0,34.611111111112">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,34.611111111112" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="286,279"
+          Size="286,322"
+          Id="Package\SEQC_Empresa"
+          TopLeft="431.988095238095,641.119047619047" />
+        <NodeLayout
+          Size="132,42"
+          Id="Package\SEQC_Perfil\DFT_Perfil"
+          TopLeft="82.4166666666667,87.4444444444446" />
+        <NodeLayout
+          Size="132,42"
+          Id="Package\SEQC_Perfil\EPT_Perfil"
+          TopLeft="68.111111111111,165.111111111112" />
+        <NodeLayout
+          Size="177,42"
+          Id="Package\SEQC_Perfil\SQL_NotFoundRow"
+          TopLeft="59.3333333333336,14.6666666666666" />
+        <EdgeLayout
+          Id="Package\SEQC_Perfil.PrecedenceConstraints[Constraint]"
+          TopLeft="148.125,56.6666666666666">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,30.777777777778"
+              Start="0,0"
+              End="0,23.277777777778">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,23.277777777778" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\SEQC_Perfil.PrecedenceConstraints[Constraint 1]"
+          TopLeft="148.416666666667,129.444444444445">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-14.3055555555557,35.6666666666674"
+              Start="0,0"
+              End="-14.3055555555557,28.1666666666674">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,13.8333333333337" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,13.8333333333337"
+                    Point2="0,17.8333333333337"
+                    Point3="-4,17.8333333333337" />
+                  <mssgle:LineSegment
+                    End="-10.3055555555557,17.8333333333337" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-10.3055555555557,17.8333333333337"
+                    Point2="-14.3055555555557,17.8333333333337"
+                    Point3="-14.3055555555557,21.8333333333337" />
+                  <mssgle:LineSegment
+                    End="-14.3055555555557,28.1666666666674" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="303,262"
+          Size="303,305"
+          Id="Package\SEQC_Perfil"
+          TopLeft="809.047619047618,639.035714285714" />
+        <NodeLayout
+          Size="141,42"
+          Id="Package\SEQC_Projeto\DFT_Projeto"
+          TopLeft="62.6666666666665,42.1666666666667" />
+        <NodeLayout
+          Size="141,42"
+          Id="Package\SEQC_Projeto\EPT_Projeto"
+          TopLeft="60.4444444444441,157.968253968255" />
+        <EdgeLayout
+          Id="Package\SEQC_Projeto.PrecedenceConstraints[Constraint]"
+          TopLeft="132.055555555555,84.1666666666667">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,73.801587301588"
+              Start="0,0"
+              End="0,66.301587301588">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,66.301587301588" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="255,276"
+          Size="255,319"
+          Id="Package\SEQC_Projeto"
+          TopLeft="1210.26190476191,233.357142857142" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="728.484126984127,376.305555555555">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="101.019841269841,22.841269841272"
+              Start="0,0"
+              End="93.519841269841,22.841269841272">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="46.5099206349205,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="46.5099206349205,0"
+                    Point2="50.5099206349205,0"
+                    Point3="50.5099206349205,4" />
+                  <mssgle:LineSegment
+                    End="50.5099206349205,18.841269841272" />
+                  <mssgle:CubicBezierSegment
+                    Point1="50.5099206349205,18.841269841272"
+                    Point2="50.5099206349205,22.841269841272"
+                    Point3="54.5099206349205,22.841269841272" />
+                  <mssgle:LineSegment
+                    End="93.519841269841,22.841269841272" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 2]"
+          TopLeft="1157.50396825397,396.001984126984">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="52.7579365079421,0"
+              Start="0,0"
+              End="45.2579365079421,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="45.2579365079421,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 3]"
+          TopLeft="1337.76190476191,552.357142857142">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-762.773809523815,88.761904761905"
+              Start="0,0"
+              End="-762.773809523815,81.261904761905">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,40.3809523809525" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,40.3809523809525"
+                    Point2="0,44.3809523809525"
+                    Point3="-4,44.3809523809525" />
+                  <mssgle:LineSegment
+                    End="-758.773809523815,44.3809523809525" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-758.773809523815,44.3809523809525"
+                    Point2="-762.773809523815,44.3809523809525"
+                    Point3="-762.773809523815,48.3809523809525" />
+                  <mssgle:LineSegment
+                    End="-762.773809523815,81.261904761905" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 4]"
+          TopLeft="717.988095238095,802.119047619047">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="91.0595238095231,-10.583333333333"
+              Start="0,0"
+              End="83.5595238095231,-10.583333333333">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="41.5297619047615,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="41.5297619047615,0"
+                    Point2="45.5297619047615,0"
+                    Point3="45.5297619047615,-4" />
+                  <mssgle:LineSegment
+                    End="45.5297619047615,-6.58333333333303" />
+                  <mssgle:CubicBezierSegment
+                    Point1="45.5297619047615,-6.58333333333303"
+                    Point2="45.5297619047615,-10.583333333333"
+                    Point3="49.5297619047615,-10.583333333333" />
+                  <mssgle:LineSegment
+                    End="83.5595238095231,-10.583333333333" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 5]"
+          TopLeft="1112.04761904762,791.535714285714">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="77.6666666666722,-34.678571428571"
+              Start="0,0"
+              End="70.1666666666722,-34.678571428571">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="34.8333333333361,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="34.8333333333361,0"
+                    Point2="38.8333333333361,0"
+                    Point3="38.8333333333361,-4" />
+                  <mssgle:LineSegment
+                    End="38.8333333333361,-30.678571428571" />
+                  <mssgle:CubicBezierSegment
+                    Point1="38.8333333333361,-30.678571428571"
+                    Point2="38.8333333333361,-34.678571428571"
+                    Point3="42.8333333333361,-34.678571428571" />
+                  <mssgle:LineSegment
+                    End="70.1666666666722,-34.678571428571" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <AnnotationLayout
+          Text="Decorre da junção entre a tabela de funcionários vinda do PRIMAVERA, com&#xA;os colaboradores do sistema de imputações. &#xA;&#xA;Se um funcionário não obtiver match com o código de um colaborador, deve ser criada uma linha com o código a null e o nome do funcionário.&#xA;"
+          ParentId="Package"
+          FontInfo="{assembly:Null}"
+          Size="571,120"
+          Id="b235717f-2571-43fc-ac04-ceac9e79d353"
+          TopLeft="218.373015873016,101.444444444444" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\SEQC_CentroCusto\DFT_CentroCusto">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="133,42"
+          Id="Package\SEQC_CentroCusto\DFT_CentroCusto\Row Count"
+          TopLeft="113.5,119.5" />
+        <NodeLayout
+          Size="198,42"
+          Id="Package\SEQC_CentroCusto\DFT_CentroCusto\OLE_SRC_CentroCusto"
+          TopLeft="77.5,44.5" />
+        <NodeLayout
+          Size="215,42"
+          Id="Package\SEQC_CentroCusto\DFT_CentroCusto\OLE_DST_DWCentroCusto"
+          TopLeft="88.5,190.5" />
+        <EdgeLayout
+          Id="Package\SEQC_CentroCusto\DFT_CentroCusto.Paths[OLE DB Source Output]"
+          TopLeft="178.25,86.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,33"
+              Start="0,0"
+              End="0,25.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,25.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\SEQC_CentroCusto\DFT_CentroCusto.Paths[Row Count Output 1]"
+          TopLeft="180,161.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="16,29"
+              Start="0,0"
+              End="16,21.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,10.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,10.5"
+                    Point2="0,14.5"
+                    Point3="4,14.5" />
+                  <mssgle:LineSegment
+                    End="12,14.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="12,14.5"
+                    Point2="16,14.5"
+                    Point3="16,18.5" />
+                  <mssgle:LineSegment
+                    End="16,21.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\SEQC_CentroCusto\DFT_CentroCusto\OLE_SRC_CentroCusto">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\SEQC_CentroCusto\DFT_CentroCusto\OLE_DST_DWCentroCusto">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\SEQC_Colaboradores\DTF_Colaboradores">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="133,42"
+          Id="Package\SEQC_Colaboradores\DTF_Colaboradores\Row Count"
+          TopLeft="108.75,107.5" />
+        <NodeLayout
+          Size="209,42"
+          Id="Package\SEQC_Colaboradores\DTF_Colaboradores\OLE_SRC_Colaboradores"
+          TopLeft="63,21.75" />
+        <NodeLayout
+          Size="226,42"
+          Id="Package\SEQC_Colaboradores\DTF_Colaboradores\OLE_DST_DWColaboradores"
+          TopLeft="60,210" />
+        <EdgeLayout
+          Id="Package\SEQC_Colaboradores\DTF_Colaboradores.Paths[Row Count Output 1]"
+          TopLeft="174.125,149.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60.5"
+              Start="0,0"
+              End="0,53">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,53" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\SEQC_Colaboradores\DTF_Colaboradores.Paths[OLE DB Source Output]"
+          TopLeft="171.375,63.75">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,43.75"
+              Start="0,0"
+              End="0,36.25">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,36.25" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\SEQC_Colaboradores\DTF_Colaboradores\OLE_SRC_Colaboradores">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\SEQC_Colaboradores\DTF_Colaboradores\OLE_DST_DWColaboradores">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\SEQC_Empresa\DFT_Empresa">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="180,42"
+          Id="Package\SEQC_Empresa\DFT_Empresa\OLE_SRC_Empresa"
+          TopLeft="43.5,37.5" />
+        <NodeLayout
+          Size="197,42"
+          Id="Package\SEQC_Empresa\DFT_Empresa\OLE_DST_DWEmpresa"
+          TopLeft="49.5,172.5" />
+        <NodeLayout
+          Size="133,42"
+          Id="Package\SEQC_Empresa\DFT_Empresa\Row Count"
+          TopLeft="67.5,103.5" />
+        <EdgeLayout
+          Id="Package\SEQC_Empresa\DFT_Empresa.Paths[Row Count Output 1]"
+          TopLeft="134,145.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="14,27"
+              Start="0,0"
+              End="14,19.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,9.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,9.5"
+                    Point2="0,13.5"
+                    Point3="4,13.5" />
+                  <mssgle:LineSegment
+                    End="10,13.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="10,13.5"
+                    Point2="14,13.5"
+                    Point3="14,17.5" />
+                  <mssgle:LineSegment
+                    End="14,19.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\SEQC_Empresa\DFT_Empresa.Paths[OLE DB Source Output]"
+          TopLeft="133.75,79.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,24"
+              Start="0,0"
+              End="0,16.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,16.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\SEQC_Empresa\DFT_Empresa\OLE_SRC_Empresa">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\SEQC_Empresa\DFT_Empresa\OLE_DST_DWEmpresa">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\SEQC_Perfil\DFT_Perfil">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="179,42"
+          Id="Package\SEQC_Perfil\DFT_Perfil\OLE_DST_DWPerfil"
+          TopLeft="47,218" />
+        <NodeLayout
+          Size="162,42"
+          Id="Package\SEQC_Perfil\DFT_Perfil\OLE_SRC_Perfil"
+          TopLeft="74,51" />
+        <NodeLayout
+          Size="133,42"
+          Id="Package\SEQC_Perfil\DFT_Perfil\CNT_Perfil"
+          TopLeft="65,130" />
+        <EdgeLayout
+          Id="Package\SEQC_Perfil\DFT_Perfil.Paths[OLE DB Source Output]"
+          TopLeft="155,93">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-23.5,37"
+              Start="0,0"
+              End="-23.5,29.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,14.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,14.5"
+                    Point2="0,18.5"
+                    Point3="-4,18.5" />
+                  <mssgle:LineSegment
+                    End="-19.5,18.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-19.5,18.5"
+                    Point2="-23.5,18.5"
+                    Point3="-23.5,22.5" />
+                  <mssgle:LineSegment
+                    End="-23.5,29.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\SEQC_Perfil\DFT_Perfil.Paths[Row Count Output 1]"
+          TopLeft="134,172">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,46"
+              Start="0,0"
+              End="0,38.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,38.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\SEQC_Perfil\DFT_Perfil\OLE_DST_DWPerfil">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\SEQC_Perfil\DFT_Perfil\OLE_SRC_Perfil">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\SEQC_Projeto\DFT_Projeto">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="133,42"
+          Id="Package\SEQC_Projeto\DFT_Projeto\Row Count"
+          TopLeft="126.5,143.5" />
+        <NodeLayout
+          Size="171,42"
+          Id="Package\SEQC_Projeto\DFT_Projeto\OLE_SRC_Projeto"
+          TopLeft="110,68" />
+        <NodeLayout
+          Size="188,42"
+          Id="Package\SEQC_Projeto\DFT_Projeto\OLE_DST_DWProjeto"
+          TopLeft="112,223" />
+        <EdgeLayout
+          Id="Package\SEQC_Projeto\DFT_Projeto.Paths[Row Count Output 1]"
+          TopLeft="193,185.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="13,37.5"
+              Start="0,0"
+              End="13,30">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,14.75" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,14.75"
+                    Point2="0,18.75"
+                    Point3="4,18.75" />
+                  <mssgle:LineSegment
+                    End="9,18.75" />
+                  <mssgle:CubicBezierSegment
+                    Point1="9,18.75"
+                    Point2="13,18.75"
+                    Point3="13,22.75" />
+                  <mssgle:LineSegment
+                    End="13,30" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\SEQC_Projeto\DFT_Projeto.Paths[OLE DB Source Output]"
+          TopLeft="194.25,110">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,33.5"
+              Start="0,0"
+              End="0,26">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,26" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\SEQC_Projeto\DFT_Projeto\OLE_SRC_Projeto">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\SEQC_Projeto\DFT_Projeto\OLE_DST_DWProjeto">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

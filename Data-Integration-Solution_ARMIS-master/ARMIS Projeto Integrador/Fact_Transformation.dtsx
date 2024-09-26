@@ -1,0 +1,1607 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="2/23/2024 4:33:35 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-UMHE8LJ"
+  DTS:CreatorName="DESKTOP-UMHE8LJ\jpjoa"
+  DTS:DTSID="{9D4FB239-12B2-44DE-BA19-94A79F1BA50F}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5397.1"
+  DTS:LocaleID="2070"
+  DTS:ObjectName="Data Extraction"
+  DTS:PackageType="5"
+  DTS:VersionBuild="179"
+  DTS:VersionGUID="{3B0880A8-D932-4D8B-9FBD-71B33273D696}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[extraction.log.txt]"
+      DTS:CreationName="FILE"
+      DTS:DTSID="{28084FD6-AC08-4B37-8FAB-2DBE5A3A876F}"
+      DTS:ObjectName="extraction.log.txt">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:FileUsageType="1"
+          DTS:ConnectionString="C:\Users\jpjoa\OneDrive\Área de Trabalho\ARMIS\ARMIS Projeto Integrador\ARMIS Projeto Integrador\extraction.log.txt" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[ExtractionLog.log]"
+      DTS:CreationName="FILE"
+      DTS:DTSID="{21B3D85E-A598-4895-92DD-4DD70D6D5A97}"
+      DTS:ObjectName="ExtractionLog.log">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:FileUsageType="1"
+          DTS:ConnectionString="C:\Users\jpjoa\OneDrive\Área de Trabalho\ARMIS\ARMIS Projeto Integrador\ARMIS Projeto Integrador\ExtractionLog.log" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Flat File Connection Manager]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{D0F62A40-A8B9-4E34-80A4-F1DBBBCD85D2}"
+      DTS:ObjectName="Flat File Connection Manager">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="2070"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\Users\jpjoa\OneDrive\Área de Trabalho\ARMIS\ARMIS Projeto Integrador\ARMIS Projeto Integrador\no_match.txt">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="CodigoProjeto"
+              DTS:DTSID="{5460589A-077D-46BF-BBAE-05392F017751}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Username"
+              DTS:DTSID="{BACB50EA-323A-459A-BBAB-CF3C8C1410E0}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Ano"
+              DTS:DTSID="{0B8AD56B-BC21-4131-B53F-A1D35F03C2D8}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Mes"
+              DTS:DTSID="{1DD5C8A8-5B73-4000-A220-63AA19BB4738}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="131"
+              DTS:DataPrecision="18"
+              DTS:DataScale="2"
+              DTS:TextQualified="True"
+              DTS:ObjectName="NHoras"
+              DTS:DTSID="{CB3DFA5D-6501-4125-AADC-0974FFF2D58F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="135"
+              DTS:TextQualified="True"
+              DTS:ObjectName="DataInicio"
+              DTS:DTSID="{8D16895C-FC29-4A75-AA27-8C1325604262}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="135"
+              DTS:TextQualified="True"
+              DTS:ObjectName="DataFim"
+              DTS:DTSID="{5D22C3DD-34F6-420D-8551-074FEE182239}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="username"
+              DTS:DTSID="{CECBF3ED-6945-476C-A00B-AE9822FA8D66}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="codigoUser"
+              DTS:DTSID="{809B4215-A078-4BB7-99C6-FB30251495A0}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="idProjeto"
+              DTS:DTSID="{1A4EDF86-428A-4E68-8D34-AE94BACE1E7E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="idEmpresaProjeto"
+              DTS:DTSID="{14F3C634-F61B-4832-9854-28876E4CA9B9}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Flat File Connection Manager 1]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{FD8612D6-81DC-4D91-B9FC-C535DB4F55F2}"
+      DTS:ObjectName="Flat File Connection Manager 1">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="2070"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\Users\jpjoa\OneDrive\Área de Trabalho\ARMIS\ARMIS Projeto Integrador\ARMIS Projeto Integrador\sad.txt">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Ano"
+              DTS:DTSID="{4154BA74-8648-4424-A9D1-E58AD514F9AD}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Mes"
+              DTS:DTSID="{6EBCBFB8-BAA8-4D3B-B317-65655DCFFFCA}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="idProjeto"
+              DTS:DTSID="{75A8EA78-D117-4D2D-AC35-11527DD9F78C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="idEmpresaProjeto"
+              DTS:DTSID="{31522E61-9516-4F17-AE43-4D91DB9F2B19}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="idEmpresaColaborador"
+              DTS:DTSID="{40D0E17B-A481-4954-8876-D2EEE7CBEA5D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="idUtilizador"
+              DTS:DTSID="{B561B4D7-181E-43BC-AEBD-D820661075F3}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="idCentroCusto"
+              DTS:DTSID="{7F0E6A6A-BEB2-4739-851D-8607AF9910B4}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Rendimentos"
+              DTS:DTSID="{07361FFD-93D7-4A1E-A216-D315F0949B5C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="4"
+              DTS:TextQualified="True"
+              DTS:ObjectName="SegurancaSocial"
+              DTS:DTSID="{5721D2CF-4531-42DB-94E4-FDB05372CFC1}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Descontos"
+              DTS:DTSID="{D4EA1836-CCF1-4398-9EEE-6B099DCF6344}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="131"
+              DTS:DataPrecision="38"
+              DTS:DataScale="2"
+              DTS:TextQualified="True"
+              DTS:ObjectName="NHoras"
+              DTS:DTSID="{33A0D1E0-FF5F-4966-88C9-12364EA250F4}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Perfil"
+              DTS:DTSID="{9FF96480-AF61-4F07-B51A-E96BC6119A03}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ErrorCode"
+              DTS:DTSID="{21AD4489-8612-47FB-8F24-CE49869A3500}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ErrorColumn"
+              DTS:DTSID="{30450B9F-E6B7-4B88-AEB4-C18F18A007BE}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:LogProviders>
+    <DTS:LogProvider
+      DTS:ConfigString="ExtractionLog.log"
+      DTS:CreationName="Microsoft.LogProviderTextFile"
+      DTS:Description="Writes log entries for events to a CSV file"
+      DTS:DTSID="{21E716BF-5885-4427-BFC4-E5861100403E}"
+      DTS:ObjectName="Data Extraction Log File">
+      <DTS:ObjectData>
+        <InnerObject />
+      </DTS:ObjectData>
+    </DTS:LogProvider>
+  </DTS:LogProviders>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{03978F12-4970-485A-B69F-C79A787F6C59}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="centroCustoNaoEncontradoKey">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{5070976F-88CA-4FFC-8149-3B0AC56F4E30}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="empresaNaoEncontradaKey">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{E5BA7F42-AFDC-42C4-8A0D-3AC50700C519}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="perfilNaoEncontradoKey">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{A570D72F-BEFE-4D8F-8A37-452279CA054F}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="rowCountColaboradores">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{802287C4-B67A-4B23-8B97-9203C5647F13}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="rowCountImputacoes">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{704CF400-25ED-466A-9EE1-1B276257FF15}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="tableNameFact">
+      <DTS:VariableValue
+        DTS:DataType="8">dw.Imputacoes</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:LoggingOptions
+    DTS:FilterKind="0"
+    DTS:LoggingMode="1">
+    <DTS:Property
+      DTS:DataType="8"
+      DTS:Name="EventFilter">3,18,OnPipelineRowsSent,13,OnPostExecute,12,OnPreExecute</DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnPipelineRowsSent"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnPostExecute"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnPreExecute"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:SelectedLogProviders>
+      <DTS:SelectedLogProvider
+        DTS:InstanceID="{21E716BF-5885-4427-BFC4-E5861100403E}" />
+    </DTS:SelectedLogProviders>
+  </DTS:LoggingOptions>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\SEQC_Imputations_fact"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{2F2B8B39-7692-412B-BFAB-0CF15EC26740}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="SEQC_Imputations_fact">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\SEQC_Imputations_fact\DFT_CreateFact"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Data Flow Task"
+          DTS:DTSID="{56933690-646A-4120-B3EE-989B4E58D968}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="DFT_CreateFact"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\SEQC_Imputations_fact\DFT_CreateFact\CNT_Imputacoes"
+                  componentClassID="Microsoft.RowCount"
+                  contactInfo="Row Count;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                  description="Counts rows as they pass through a data flow. For example, use the number of rows processed to determine whether or not to perform cleanup operations, or update text in an e-mail message to communicate processing status."
+                  name="CNT_Imputacoes">
+                  <properties>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable to hold the row count."
+                      name="VariableName">User::rowCountImputacoes</property>
+                  </properties>
+                  <inputs>
+                    <input
+                      refId="Package\SEQC_Imputations_fact\DFT_CreateFact\CNT_Imputacoes.Inputs[Row Count Input 1]"
+                      hasSideEffects="true"
+                      name="Row Count Input 1">
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\SEQC_Imputations_fact\DFT_CreateFact\CNT_Imputacoes.Outputs[Row Count Output 1]"
+                      name="Row Count Output 1"
+                      synchronousInputId="Package\SEQC_Imputations_fact\DFT_CreateFact\CNT_Imputacoes.Inputs[Row Count Input 1]">
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\SEQC_Imputations_fact\DFT_CreateFact\Derived Column"
+                  componentClassID="Microsoft.DerivedColumn"
+                  contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                  description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+                  name="Derived Column"
+                  usesDispositions="true">
+                  <inputs>
+                    <input
+                      refId="Package\SEQC_Imputations_fact\DFT_CreateFact\Derived Column.Inputs[Derived Column Input]"
+                      description="Input to the Derived Column Transformation"
+                      name="Derived Column Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\SEQC_Imputations_fact\DFT_CreateFact\Derived Column.Inputs[Derived Column Input].Columns[idPerfil]"
+                          cachedDataType="i4"
+                          cachedName="Perfil"
+                          errorOrTruncationOperation="Computation"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\SEQC_Imputations_fact\DFT_CreateFact\OLE_SRC_FactTable.Outputs[OLE DB Source Output].Columns[Perfil]"
+                          name="idPerfil"
+                          truncationRowDisposition="FailComponent"
+                          usageType="readWrite">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Expression"
+                              name="Expression">[ISNULL](#{Package\SEQC_Imputations_fact\DFT_CreateFact\OLE_SRC_FactTable.Outputs[OLE DB Source Output].Columns[Perfil]}) ? 23 : #{Package\SEQC_Imputations_fact\DFT_CreateFact\OLE_SRC_FactTable.Outputs[OLE DB Source Output].Columns[Perfil]}</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Friendly Expression"
+                              expressionType="Notify"
+                              name="FriendlyExpression">ISNULL(idPerfil) ? 23 : idPerfil</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\SEQC_Imputations_fact\DFT_CreateFact\Derived Column.Inputs[Derived Column Input].Columns[idCentroCusto]"
+                          cachedDataType="i4"
+                          cachedName="idCentroCusto"
+                          errorOrTruncationOperation="Computation"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\SEQC_Imputations_fact\DFT_CreateFact\OLE_SRC_FactTable.Outputs[OLE DB Source Output].Columns[idCentroCusto]"
+                          truncationRowDisposition="FailComponent"
+                          usageType="readWrite">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Expression"
+                              name="Expression">[ISNULL](#{Package\SEQC_Imputations_fact\DFT_CreateFact\OLE_SRC_FactTable.Outputs[OLE DB Source Output].Columns[idCentroCusto]}) ? 208 : #{Package\SEQC_Imputations_fact\DFT_CreateFact\OLE_SRC_FactTable.Outputs[OLE DB Source Output].Columns[idCentroCusto]}</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Friendly Expression"
+                              expressionType="Notify"
+                              name="FriendlyExpression">ISNULL(idCentroCusto) ? 208 : idCentroCusto</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\SEQC_Imputations_fact\DFT_CreateFact\Derived Column.Inputs[Derived Column Input].Columns[idEmpresaProjeto]"
+                          cachedDataType="i4"
+                          cachedName="idEmpresaProjeto"
+                          errorOrTruncationOperation="Computation"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\SEQC_Imputations_fact\DFT_CreateFact\OLE_SRC_FactTable.Outputs[OLE DB Source Output].Columns[idEmpresaProjeto]"
+                          truncationRowDisposition="FailComponent"
+                          usageType="readWrite">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Expression"
+                              name="Expression">[ISNULL](#{Package\SEQC_Imputations_fact\DFT_CreateFact\OLE_SRC_FactTable.Outputs[OLE DB Source Output].Columns[idEmpresaProjeto]}) ? 14 : #{Package\SEQC_Imputations_fact\DFT_CreateFact\OLE_SRC_FactTable.Outputs[OLE DB Source Output].Columns[idEmpresaProjeto]}</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Friendly Expression"
+                              expressionType="Notify"
+                              name="FriendlyExpression">ISNULL(idEmpresaProjeto) ? 14 : idEmpresaProjeto</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\SEQC_Imputations_fact\DFT_CreateFact\Derived Column.Inputs[Derived Column Input].Columns[idEmpresaColaborador]"
+                          cachedDataType="i4"
+                          cachedName="idEmpresaColaborador"
+                          errorOrTruncationOperation="Computation"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\SEQC_Imputations_fact\DFT_CreateFact\OLE_SRC_FactTable.Outputs[OLE DB Source Output].Columns[idEmpresaColaborador]"
+                          truncationRowDisposition="FailComponent"
+                          usageType="readWrite">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Expression"
+                              name="Expression">[ISNULL](#{Package\SEQC_Imputations_fact\DFT_CreateFact\OLE_SRC_FactTable.Outputs[OLE DB Source Output].Columns[idEmpresaColaborador]}) ? 14 : #{Package\SEQC_Imputations_fact\DFT_CreateFact\OLE_SRC_FactTable.Outputs[OLE DB Source Output].Columns[idEmpresaColaborador]}</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Friendly Expression"
+                              expressionType="Notify"
+                              name="FriendlyExpression">ISNULL(idEmpresaColaborador) ? 14 : idEmpresaColaborador</property>
+                          </properties>
+                        </inputColumn>
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\SEQC_Imputations_fact\DFT_CreateFact\Derived Column.Outputs[Derived Column Output]"
+                      description="Default Output of the Derived Column Transformation"
+                      exclusionGroup="1"
+                      name="Derived Column Output"
+                      synchronousInputId="Package\SEQC_Imputations_fact\DFT_CreateFact\Derived Column.Inputs[Derived Column Input]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\SEQC_Imputations_fact\DFT_CreateFact\Derived Column.Outputs[Derived Column Error Output]"
+                      description="Error Output of the Derived Column Transformation"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Derived Column Error Output"
+                      synchronousInputId="Package\SEQC_Imputations_fact\DFT_CreateFact\Derived Column.Inputs[Derived Column Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\SEQC_Imputations_fact\DFT_CreateFact\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\SEQC_Imputations_fact\DFT_CreateFact\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\SEQC_Imputations_fact\DFT_CreateFact\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\SEQC_Imputations_fact\DFT_CreateFact\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\SEQC_Imputations_fact\DFT_CreateFact\OLE DB Destination"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB Destination"
+                  name="OLE DB Destination"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[dw].[Imputacoes]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">3</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\SEQC_Imputations_fact\DFT_CreateFact\OLE DB Destination.Connections[OleDbConnection]"
+                      connectionManagerID="{57D6D694-C0FA-44BF-A876-D3C891EBD1AB}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[DESKTOP-UMHE8LJ_SQLEXPRESS.ARMISDatabase2024]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\SEQC_Imputations_fact\DFT_CreateFact\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                      errorOrTruncationOperation="Insert"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\SEQC_Imputations_fact\DFT_CreateFact\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[idProjeto]"
+                          cachedDataType="i4"
+                          cachedName="idProjeto"
+                          externalMetadataColumnId="Package\SEQC_Imputations_fact\DFT_CreateFact\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[idProjeto]"
+                          lineageId="Package\SEQC_Imputations_fact\DFT_CreateFact\OLE_SRC_FactTable.Outputs[OLE DB Source Output].Columns[idProjeto]" />
+                        <inputColumn
+                          refId="Package\SEQC_Imputations_fact\DFT_CreateFact\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[idEmpresaProjeto]"
+                          cachedDataType="i4"
+                          cachedName="idEmpresaProjeto"
+                          externalMetadataColumnId="Package\SEQC_Imputations_fact\DFT_CreateFact\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[idEmpresaProjeto]"
+                          lineageId="Package\SEQC_Imputations_fact\DFT_CreateFact\OLE_SRC_FactTable.Outputs[OLE DB Source Output].Columns[idEmpresaProjeto]" />
+                        <inputColumn
+                          refId="Package\SEQC_Imputations_fact\DFT_CreateFact\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[idEmpresaColaborador]"
+                          cachedDataType="i4"
+                          cachedName="idEmpresaColaborador"
+                          externalMetadataColumnId="Package\SEQC_Imputations_fact\DFT_CreateFact\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[idEmpresaColaborador]"
+                          lineageId="Package\SEQC_Imputations_fact\DFT_CreateFact\OLE_SRC_FactTable.Outputs[OLE DB Source Output].Columns[idEmpresaColaborador]" />
+                        <inputColumn
+                          refId="Package\SEQC_Imputations_fact\DFT_CreateFact\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[idCentroCusto]"
+                          cachedDataType="i4"
+                          cachedName="idCentroCusto"
+                          externalMetadataColumnId="Package\SEQC_Imputations_fact\DFT_CreateFact\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[idCentroCusto]"
+                          lineageId="Package\SEQC_Imputations_fact\DFT_CreateFact\OLE_SRC_FactTable.Outputs[OLE DB Source Output].Columns[idCentroCusto]" />
+                        <inputColumn
+                          refId="Package\SEQC_Imputations_fact\DFT_CreateFact\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Rendimentos]"
+                          cachedDataType="r4"
+                          cachedName="Rendimentos"
+                          externalMetadataColumnId="Package\SEQC_Imputations_fact\DFT_CreateFact\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[rendimentos]"
+                          lineageId="Package\SEQC_Imputations_fact\DFT_CreateFact\OLE_SRC_FactTable.Outputs[OLE DB Source Output].Columns[Rendimentos]" />
+                        <inputColumn
+                          refId="Package\SEQC_Imputations_fact\DFT_CreateFact\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[SegurancaSocial]"
+                          cachedDataType="r4"
+                          cachedName="SegurancaSocial"
+                          externalMetadataColumnId="Package\SEQC_Imputations_fact\DFT_CreateFact\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[segurancaSocial]"
+                          lineageId="Package\SEQC_Imputations_fact\DFT_CreateFact\OLE_SRC_FactTable.Outputs[OLE DB Source Output].Columns[SegurancaSocial]" />
+                        <inputColumn
+                          refId="Package\SEQC_Imputations_fact\DFT_CreateFact\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Descontos]"
+                          cachedDataType="r4"
+                          cachedName="Descontos"
+                          externalMetadataColumnId="Package\SEQC_Imputations_fact\DFT_CreateFact\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[descontos]"
+                          lineageId="Package\SEQC_Imputations_fact\DFT_CreateFact\OLE_SRC_FactTable.Outputs[OLE DB Source Output].Columns[Descontos]" />
+                        <inputColumn
+                          refId="Package\SEQC_Imputations_fact\DFT_CreateFact\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Perfil]"
+                          cachedDataType="i4"
+                          cachedName="Perfil"
+                          externalMetadataColumnId="Package\SEQC_Imputations_fact\DFT_CreateFact\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[idPerfil]"
+                          lineageId="Package\SEQC_Imputations_fact\DFT_CreateFact\OLE_SRC_FactTable.Outputs[OLE DB Source Output].Columns[Perfil]" />
+                        <inputColumn
+                          refId="Package\SEQC_Imputations_fact\DFT_CreateFact\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[FirstDayOfMonth]"
+                          cachedDataType="dbDate"
+                          cachedName="FirstDayOfMonth"
+                          externalMetadataColumnId="Package\SEQC_Imputations_fact\DFT_CreateFact\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[data]"
+                          lineageId="Package\SEQC_Imputations_fact\DFT_CreateFact\OLE_SRC_FactTable.Outputs[OLE DB Source Output].Columns[FirstDayOfMonth]" />
+                        <inputColumn
+                          refId="Package\SEQC_Imputations_fact\DFT_CreateFact\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[idUtilizador]"
+                          cachedDataType="wstr"
+                          cachedLength="50"
+                          cachedName="idUtilizador"
+                          externalMetadataColumnId="Package\SEQC_Imputations_fact\DFT_CreateFact\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[idColaborador]"
+                          lineageId="Package\SEQC_Imputations_fact\DFT_CreateFact\OLE_SRC_FactTable.Outputs[OLE DB Source Output].Columns[idUtilizador]" />
+                        <inputColumn
+                          refId="Package\SEQC_Imputations_fact\DFT_CreateFact\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[NHoras]"
+                          cachedDataType="numeric"
+                          cachedName="NHoras"
+                          cachedPrecision="38"
+                          cachedScale="2"
+                          externalMetadataColumnId="Package\SEQC_Imputations_fact\DFT_CreateFact\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[horas]"
+                          lineageId="Package\SEQC_Imputations_fact\DFT_CreateFact\OLE_SRC_FactTable.Outputs[OLE DB Source Output].Columns[NHoras]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\SEQC_Imputations_fact\DFT_CreateFact\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[idImputacao]"
+                          dataType="i4"
+                          name="idImputacao" />
+                        <externalMetadataColumn
+                          refId="Package\SEQC_Imputations_fact\DFT_CreateFact\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[data]"
+                          dataType="dbDate"
+                          name="data" />
+                        <externalMetadataColumn
+                          refId="Package\SEQC_Imputations_fact\DFT_CreateFact\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[idColaborador]"
+                          dataType="wstr"
+                          length="50"
+                          name="idColaborador" />
+                        <externalMetadataColumn
+                          refId="Package\SEQC_Imputations_fact\DFT_CreateFact\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[idProjeto]"
+                          dataType="i4"
+                          name="idProjeto" />
+                        <externalMetadataColumn
+                          refId="Package\SEQC_Imputations_fact\DFT_CreateFact\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[idEmpresaColaborador]"
+                          dataType="i4"
+                          name="idEmpresaColaborador" />
+                        <externalMetadataColumn
+                          refId="Package\SEQC_Imputations_fact\DFT_CreateFact\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[idEmpresaProjeto]"
+                          dataType="i4"
+                          name="idEmpresaProjeto" />
+                        <externalMetadataColumn
+                          refId="Package\SEQC_Imputations_fact\DFT_CreateFact\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[idCentroCusto]"
+                          dataType="i4"
+                          name="idCentroCusto" />
+                        <externalMetadataColumn
+                          refId="Package\SEQC_Imputations_fact\DFT_CreateFact\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[idPerfil]"
+                          dataType="i4"
+                          name="idPerfil" />
+                        <externalMetadataColumn
+                          refId="Package\SEQC_Imputations_fact\DFT_CreateFact\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[rendimentos]"
+                          dataType="numeric"
+                          name="rendimentos"
+                          precision="10"
+                          scale="2" />
+                        <externalMetadataColumn
+                          refId="Package\SEQC_Imputations_fact\DFT_CreateFact\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[descontos]"
+                          dataType="numeric"
+                          name="descontos"
+                          precision="10"
+                          scale="2" />
+                        <externalMetadataColumn
+                          refId="Package\SEQC_Imputations_fact\DFT_CreateFact\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[segurancaSocial]"
+                          dataType="numeric"
+                          name="segurancaSocial"
+                          precision="10"
+                          scale="2" />
+                        <externalMetadataColumn
+                          refId="Package\SEQC_Imputations_fact\DFT_CreateFact\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[horas]"
+                          dataType="numeric"
+                          name="horas"
+                          precision="18"
+                          scale="2" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\SEQC_Imputations_fact\DFT_CreateFact\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Destination Error Output"
+                      synchronousInputId="Package\SEQC_Imputations_fact\DFT_CreateFact\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\SEQC_Imputations_fact\DFT_CreateFact\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\SEQC_Imputations_fact\DFT_CreateFact\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\SEQC_Imputations_fact\DFT_CreateFact\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\SEQC_Imputations_fact\DFT_CreateFact\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\SEQC_Imputations_fact\DFT_CreateFact\OLE_SRC_FactTable"
+                  componentClassID="Microsoft.OLEDBSource"
+                  contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+                  description="OLE DB Source"
+                  name="OLE_SRC_FactTable"
+                  usesDispositions="true"
+                  version="7">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[stg].[imputacoes]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">WITH CTE AS (
+    SELECT
+        DATEFROMPARTS([Ano], [Mes], 1) AS [FirstDayOfMonth],
+        [CodigoProjeto],
+        [Username],
+        SUM([NHoras]) AS TotalHoras,
+        SUM(SUM([NHoras])) OVER (PARTITION BY DATEFROMPARTS([Ano], [Mes], 1), [Username]) AS TotalHorasAnoMesColaborador
+    FROM [ARMISDatabase2024].[stg2].[imputacoes]
+    GROUP BY DATEFROMPARTS([Ano], [Mes], 1), [CodigoProjeto], [Username]
+),
+Percentages AS (
+    SELECT
+        [FirstDayOfMonth],
+        [CodigoProjeto],
+        [Username],
+        TotalHoras,
+        CASE
+            WHEN TotalHorasAnoMesColaborador = 0 THEN 1
+            ELSE TotalHoras * 1.0 / TotalHorasAnoMesColaborador
+        END AS Percentage
+    FROM CTE
+)
+SELECT
+    c.[FirstDayOfMonth],
+    p.idProjeto,
+    ep.[id] AS [idEmpresaProjeto],
+    col.idEmpresa AS [idEmpresaColaborador],
+    col.codigo AS [idUtilizador],
+    perf.idPerfil AS [Perfil],
+    SUM(mp.rendimentos) AS [TotalRendimentos],
+    SUM(c.TotalHorasAnoMesColaborador) as [TotalHorasAnoMes],
+    cc.idCentroCusto,
+    CAST(SUM(mp.Rendimentos * perc.Percentage) AS DECIMAL(10, 2)) AS [Rendimentos],
+    CAST(SUM(mp.SegurancaSocial * perc.Percentage) AS DECIMAL(10, 2)) AS [SegurancaSocial],
+    CAST(SUM(mp.Descontos * perc.Percentage) AS DECIMAL(10, 2)) AS [Descontos],
+    c.TotalHoras AS [NHoras]
+FROM CTE c
+LEFT JOIN Percentages perc ON c.[FirstDayOfMonth] = perc.[FirstDayOfMonth]
+                           AND c.[CodigoProjeto] = perc.[CodigoProjeto]
+                           AND c.[Username] = perc.[Username]
+LEFT JOIN [stg2].[projetos] p ON c.[CodigoProjeto] = p.[codigoProjeto]
+LEFT JOIN [stg2].[empresas] ep ON p.[idEmpresa] = ep.[id]
+LEFT JOIN [stg2].[ColaboradoresMerged] col ON c.[Username] = col.[Username]
+LEFT JOIN [stg2].[CentroCusto] cc ON p.centroCusto = cc.codigoCentroCusto
+LEFT JOIN [stg2].[perfil] perf ON col.perfil = perf.Perfil
+LEFT JOIN [stg2].movimentos_primavera mp ON c.[FirstDayOfMonth] = DATEFROMPARTS(mp.[Ano], mp.[Mes], 1) AND c.Username = mp.Funcionario
+
+GROUP BY
+    c.[FirstDayOfMonth],
+    p.idProjeto,
+    ep.[id],
+    col.idEmpresa,
+    col.codigo,
+    perf.idPerfil,
+    cc.idCentroCusto,
+    c.TotalHoras;</property>
+                    <property
+                      dataType="System.String"
+                      description="The variable that contains the SQL command to be executed."
+                      name="SqlCommandVariable"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">2</property>
+                    <property
+                      dataType="System.String"
+                      description="The mappings between the parameters in the SQL command and variables."
+                      name="ParameterMapping"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\SEQC_Imputations_fact\DFT_CreateFact\OLE_SRC_FactTable.Connections[OleDbConnection]"
+                      connectionManagerID="{57D6D694-C0FA-44BF-A876-D3C891EBD1AB}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[DESKTOP-UMHE8LJ_SQLEXPRESS.ARMISDatabase2024]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\SEQC_Imputations_fact\DFT_CreateFact\OLE_SRC_FactTable.Outputs[OLE DB Source Output]"
+                      name="OLE DB Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\SEQC_Imputations_fact\DFT_CreateFact\OLE_SRC_FactTable.Outputs[OLE DB Source Output].Columns[idProjeto]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\SEQC_Imputations_fact\DFT_CreateFact\OLE_SRC_FactTable.Outputs[OLE DB Source Output].ExternalColumns[idProjeto]"
+                          lineageId="Package\SEQC_Imputations_fact\DFT_CreateFact\OLE_SRC_FactTable.Outputs[OLE DB Source Output].Columns[idProjeto]"
+                          name="idProjeto"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\SEQC_Imputations_fact\DFT_CreateFact\OLE_SRC_FactTable.Outputs[OLE DB Source Output].Columns[idEmpresaProjeto]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\SEQC_Imputations_fact\DFT_CreateFact\OLE_SRC_FactTable.Outputs[OLE DB Source Output].ExternalColumns[idEmpresaProjeto]"
+                          lineageId="Package\SEQC_Imputations_fact\DFT_CreateFact\OLE_SRC_FactTable.Outputs[OLE DB Source Output].Columns[idEmpresaProjeto]"
+                          name="idEmpresaProjeto"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\SEQC_Imputations_fact\DFT_CreateFact\OLE_SRC_FactTable.Outputs[OLE DB Source Output].Columns[idEmpresaColaborador]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\SEQC_Imputations_fact\DFT_CreateFact\OLE_SRC_FactTable.Outputs[OLE DB Source Output].ExternalColumns[idEmpresaColaborador]"
+                          lineageId="Package\SEQC_Imputations_fact\DFT_CreateFact\OLE_SRC_FactTable.Outputs[OLE DB Source Output].Columns[idEmpresaColaborador]"
+                          name="idEmpresaColaborador"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\SEQC_Imputations_fact\DFT_CreateFact\OLE_SRC_FactTable.Outputs[OLE DB Source Output].Columns[idUtilizador]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\SEQC_Imputations_fact\DFT_CreateFact\OLE_SRC_FactTable.Outputs[OLE DB Source Output].ExternalColumns[idUtilizador]"
+                          length="50"
+                          lineageId="Package\SEQC_Imputations_fact\DFT_CreateFact\OLE_SRC_FactTable.Outputs[OLE DB Source Output].Columns[idUtilizador]"
+                          name="idUtilizador"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\SEQC_Imputations_fact\DFT_CreateFact\OLE_SRC_FactTable.Outputs[OLE DB Source Output].Columns[idCentroCusto]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\SEQC_Imputations_fact\DFT_CreateFact\OLE_SRC_FactTable.Outputs[OLE DB Source Output].ExternalColumns[idCentroCusto]"
+                          lineageId="Package\SEQC_Imputations_fact\DFT_CreateFact\OLE_SRC_FactTable.Outputs[OLE DB Source Output].Columns[idCentroCusto]"
+                          name="idCentroCusto"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\SEQC_Imputations_fact\DFT_CreateFact\OLE_SRC_FactTable.Outputs[OLE DB Source Output].Columns[Rendimentos]"
+                          dataType="r4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\SEQC_Imputations_fact\DFT_CreateFact\OLE_SRC_FactTable.Outputs[OLE DB Source Output].ExternalColumns[Rendimentos]"
+                          lineageId="Package\SEQC_Imputations_fact\DFT_CreateFact\OLE_SRC_FactTable.Outputs[OLE DB Source Output].Columns[Rendimentos]"
+                          name="Rendimentos"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\SEQC_Imputations_fact\DFT_CreateFact\OLE_SRC_FactTable.Outputs[OLE DB Source Output].Columns[SegurancaSocial]"
+                          dataType="r4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\SEQC_Imputations_fact\DFT_CreateFact\OLE_SRC_FactTable.Outputs[OLE DB Source Output].ExternalColumns[SegurancaSocial]"
+                          lineageId="Package\SEQC_Imputations_fact\DFT_CreateFact\OLE_SRC_FactTable.Outputs[OLE DB Source Output].Columns[SegurancaSocial]"
+                          name="SegurancaSocial"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\SEQC_Imputations_fact\DFT_CreateFact\OLE_SRC_FactTable.Outputs[OLE DB Source Output].Columns[Descontos]"
+                          dataType="r4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\SEQC_Imputations_fact\DFT_CreateFact\OLE_SRC_FactTable.Outputs[OLE DB Source Output].ExternalColumns[Descontos]"
+                          lineageId="Package\SEQC_Imputations_fact\DFT_CreateFact\OLE_SRC_FactTable.Outputs[OLE DB Source Output].Columns[Descontos]"
+                          name="Descontos"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\SEQC_Imputations_fact\DFT_CreateFact\OLE_SRC_FactTable.Outputs[OLE DB Source Output].Columns[NHoras]"
+                          dataType="numeric"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\SEQC_Imputations_fact\DFT_CreateFact\OLE_SRC_FactTable.Outputs[OLE DB Source Output].ExternalColumns[NHoras]"
+                          lineageId="Package\SEQC_Imputations_fact\DFT_CreateFact\OLE_SRC_FactTable.Outputs[OLE DB Source Output].Columns[NHoras]"
+                          name="NHoras"
+                          precision="38"
+                          scale="2"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\SEQC_Imputations_fact\DFT_CreateFact\OLE_SRC_FactTable.Outputs[OLE DB Source Output].Columns[Perfil]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\SEQC_Imputations_fact\DFT_CreateFact\OLE_SRC_FactTable.Outputs[OLE DB Source Output].ExternalColumns[Perfil]"
+                          lineageId="Package\SEQC_Imputations_fact\DFT_CreateFact\OLE_SRC_FactTable.Outputs[OLE DB Source Output].Columns[Perfil]"
+                          name="Perfil"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\SEQC_Imputations_fact\DFT_CreateFact\OLE_SRC_FactTable.Outputs[OLE DB Source Output].Columns[TotalRendimentos]"
+                          dataType="i8"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\SEQC_Imputations_fact\DFT_CreateFact\OLE_SRC_FactTable.Outputs[OLE DB Source Output].ExternalColumns[TotalRendimentos]"
+                          lineageId="Package\SEQC_Imputations_fact\DFT_CreateFact\OLE_SRC_FactTable.Outputs[OLE DB Source Output].Columns[TotalRendimentos]"
+                          name="TotalRendimentos"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\SEQC_Imputations_fact\DFT_CreateFact\OLE_SRC_FactTable.Outputs[OLE DB Source Output].Columns[TotalHorasAnoMes]"
+                          dataType="numeric"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\SEQC_Imputations_fact\DFT_CreateFact\OLE_SRC_FactTable.Outputs[OLE DB Source Output].ExternalColumns[TotalHorasAnoMes]"
+                          lineageId="Package\SEQC_Imputations_fact\DFT_CreateFact\OLE_SRC_FactTable.Outputs[OLE DB Source Output].Columns[TotalHorasAnoMes]"
+                          name="TotalHorasAnoMes"
+                          precision="38"
+                          scale="2"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\SEQC_Imputations_fact\DFT_CreateFact\OLE_SRC_FactTable.Outputs[OLE DB Source Output].Columns[FirstDayOfMonth]"
+                          dataType="dbDate"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\SEQC_Imputations_fact\DFT_CreateFact\OLE_SRC_FactTable.Outputs[OLE DB Source Output].ExternalColumns[FirstDayOfMonth]"
+                          lineageId="Package\SEQC_Imputations_fact\DFT_CreateFact\OLE_SRC_FactTable.Outputs[OLE DB Source Output].Columns[FirstDayOfMonth]"
+                          name="FirstDayOfMonth"
+                          truncationRowDisposition="FailComponent" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\SEQC_Imputations_fact\DFT_CreateFact\OLE_SRC_FactTable.Outputs[OLE DB Source Output].ExternalColumns[idProjeto]"
+                          dataType="i4"
+                          name="idProjeto" />
+                        <externalMetadataColumn
+                          refId="Package\SEQC_Imputations_fact\DFT_CreateFact\OLE_SRC_FactTable.Outputs[OLE DB Source Output].ExternalColumns[idEmpresaProjeto]"
+                          dataType="i4"
+                          name="idEmpresaProjeto" />
+                        <externalMetadataColumn
+                          refId="Package\SEQC_Imputations_fact\DFT_CreateFact\OLE_SRC_FactTable.Outputs[OLE DB Source Output].ExternalColumns[idEmpresaColaborador]"
+                          dataType="i4"
+                          name="idEmpresaColaborador" />
+                        <externalMetadataColumn
+                          refId="Package\SEQC_Imputations_fact\DFT_CreateFact\OLE_SRC_FactTable.Outputs[OLE DB Source Output].ExternalColumns[idUtilizador]"
+                          dataType="wstr"
+                          length="50"
+                          name="idUtilizador" />
+                        <externalMetadataColumn
+                          refId="Package\SEQC_Imputations_fact\DFT_CreateFact\OLE_SRC_FactTable.Outputs[OLE DB Source Output].ExternalColumns[idCentroCusto]"
+                          dataType="i4"
+                          name="idCentroCusto" />
+                        <externalMetadataColumn
+                          refId="Package\SEQC_Imputations_fact\DFT_CreateFact\OLE_SRC_FactTable.Outputs[OLE DB Source Output].ExternalColumns[Rendimentos]"
+                          dataType="numeric"
+                          name="Rendimentos"
+                          precision="10"
+                          scale="2" />
+                        <externalMetadataColumn
+                          refId="Package\SEQC_Imputations_fact\DFT_CreateFact\OLE_SRC_FactTable.Outputs[OLE DB Source Output].ExternalColumns[SegurancaSocial]"
+                          dataType="numeric"
+                          name="SegurancaSocial"
+                          precision="10"
+                          scale="2" />
+                        <externalMetadataColumn
+                          refId="Package\SEQC_Imputations_fact\DFT_CreateFact\OLE_SRC_FactTable.Outputs[OLE DB Source Output].ExternalColumns[Descontos]"
+                          dataType="numeric"
+                          name="Descontos"
+                          precision="10"
+                          scale="2" />
+                        <externalMetadataColumn
+                          refId="Package\SEQC_Imputations_fact\DFT_CreateFact\OLE_SRC_FactTable.Outputs[OLE DB Source Output].ExternalColumns[NHoras]"
+                          dataType="numeric"
+                          name="NHoras"
+                          precision="38"
+                          scale="2" />
+                        <externalMetadataColumn
+                          refId="Package\SEQC_Imputations_fact\DFT_CreateFact\OLE_SRC_FactTable.Outputs[OLE DB Source Output].ExternalColumns[Perfil]"
+                          dataType="i4"
+                          name="Perfil" />
+                        <externalMetadataColumn
+                          refId="Package\SEQC_Imputations_fact\DFT_CreateFact\OLE_SRC_FactTable.Outputs[OLE DB Source Output].ExternalColumns[TotalRendimentos]"
+                          dataType="i8"
+                          name="TotalRendimentos" />
+                        <externalMetadataColumn
+                          refId="Package\SEQC_Imputations_fact\DFT_CreateFact\OLE_SRC_FactTable.Outputs[OLE DB Source Output].ExternalColumns[TotalHorasAnoMes]"
+                          dataType="numeric"
+                          name="TotalHorasAnoMes"
+                          precision="38"
+                          scale="2" />
+                        <externalMetadataColumn
+                          refId="Package\SEQC_Imputations_fact\DFT_CreateFact\OLE_SRC_FactTable.Outputs[OLE DB Source Output].ExternalColumns[FirstDayOfMonth]"
+                          dataType="dbDate"
+                          name="FirstDayOfMonth" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\SEQC_Imputations_fact\DFT_CreateFact\OLE_SRC_FactTable.Outputs[OLE DB Source Error Output]"
+                      isErrorOut="true"
+                      name="OLE DB Source Error Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\SEQC_Imputations_fact\DFT_CreateFact\OLE_SRC_FactTable.Outputs[OLE DB Source Error Output].Columns[FirstDayOfMonth]"
+                          dataType="dbDate"
+                          lineageId="Package\SEQC_Imputations_fact\DFT_CreateFact\OLE_SRC_FactTable.Outputs[OLE DB Source Error Output].Columns[FirstDayOfMonth]"
+                          name="FirstDayOfMonth" />
+                        <outputColumn
+                          refId="Package\SEQC_Imputations_fact\DFT_CreateFact\OLE_SRC_FactTable.Outputs[OLE DB Source Error Output].Columns[idProjeto]"
+                          dataType="i4"
+                          lineageId="Package\SEQC_Imputations_fact\DFT_CreateFact\OLE_SRC_FactTable.Outputs[OLE DB Source Error Output].Columns[idProjeto]"
+                          name="idProjeto" />
+                        <outputColumn
+                          refId="Package\SEQC_Imputations_fact\DFT_CreateFact\OLE_SRC_FactTable.Outputs[OLE DB Source Error Output].Columns[idEmpresaProjeto]"
+                          dataType="i4"
+                          lineageId="Package\SEQC_Imputations_fact\DFT_CreateFact\OLE_SRC_FactTable.Outputs[OLE DB Source Error Output].Columns[idEmpresaProjeto]"
+                          name="idEmpresaProjeto" />
+                        <outputColumn
+                          refId="Package\SEQC_Imputations_fact\DFT_CreateFact\OLE_SRC_FactTable.Outputs[OLE DB Source Error Output].Columns[idEmpresaColaborador]"
+                          dataType="i4"
+                          lineageId="Package\SEQC_Imputations_fact\DFT_CreateFact\OLE_SRC_FactTable.Outputs[OLE DB Source Error Output].Columns[idEmpresaColaborador]"
+                          name="idEmpresaColaborador" />
+                        <outputColumn
+                          refId="Package\SEQC_Imputations_fact\DFT_CreateFact\OLE_SRC_FactTable.Outputs[OLE DB Source Error Output].Columns[idUtilizador]"
+                          dataType="wstr"
+                          length="50"
+                          lineageId="Package\SEQC_Imputations_fact\DFT_CreateFact\OLE_SRC_FactTable.Outputs[OLE DB Source Error Output].Columns[idUtilizador]"
+                          name="idUtilizador" />
+                        <outputColumn
+                          refId="Package\SEQC_Imputations_fact\DFT_CreateFact\OLE_SRC_FactTable.Outputs[OLE DB Source Error Output].Columns[Perfil]"
+                          dataType="i4"
+                          lineageId="Package\SEQC_Imputations_fact\DFT_CreateFact\OLE_SRC_FactTable.Outputs[OLE DB Source Error Output].Columns[Perfil]"
+                          name="Perfil" />
+                        <outputColumn
+                          refId="Package\SEQC_Imputations_fact\DFT_CreateFact\OLE_SRC_FactTable.Outputs[OLE DB Source Error Output].Columns[TotalRendimentos]"
+                          dataType="i8"
+                          lineageId="Package\SEQC_Imputations_fact\DFT_CreateFact\OLE_SRC_FactTable.Outputs[OLE DB Source Error Output].Columns[TotalRendimentos]"
+                          name="TotalRendimentos" />
+                        <outputColumn
+                          refId="Package\SEQC_Imputations_fact\DFT_CreateFact\OLE_SRC_FactTable.Outputs[OLE DB Source Error Output].Columns[TotalHorasAnoMes]"
+                          dataType="numeric"
+                          lineageId="Package\SEQC_Imputations_fact\DFT_CreateFact\OLE_SRC_FactTable.Outputs[OLE DB Source Error Output].Columns[TotalHorasAnoMes]"
+                          name="TotalHorasAnoMes"
+                          precision="38"
+                          scale="2" />
+                        <outputColumn
+                          refId="Package\SEQC_Imputations_fact\DFT_CreateFact\OLE_SRC_FactTable.Outputs[OLE DB Source Error Output].Columns[idCentroCusto]"
+                          dataType="i4"
+                          lineageId="Package\SEQC_Imputations_fact\DFT_CreateFact\OLE_SRC_FactTable.Outputs[OLE DB Source Error Output].Columns[idCentroCusto]"
+                          name="idCentroCusto" />
+                        <outputColumn
+                          refId="Package\SEQC_Imputations_fact\DFT_CreateFact\OLE_SRC_FactTable.Outputs[OLE DB Source Error Output].Columns[Rendimentos]"
+                          dataType="numeric"
+                          lineageId="Package\SEQC_Imputations_fact\DFT_CreateFact\OLE_SRC_FactTable.Outputs[OLE DB Source Error Output].Columns[Rendimentos]"
+                          name="Rendimentos"
+                          precision="10"
+                          scale="2" />
+                        <outputColumn
+                          refId="Package\SEQC_Imputations_fact\DFT_CreateFact\OLE_SRC_FactTable.Outputs[OLE DB Source Error Output].Columns[SegurancaSocial]"
+                          dataType="numeric"
+                          lineageId="Package\SEQC_Imputations_fact\DFT_CreateFact\OLE_SRC_FactTable.Outputs[OLE DB Source Error Output].Columns[SegurancaSocial]"
+                          name="SegurancaSocial"
+                          precision="10"
+                          scale="2" />
+                        <outputColumn
+                          refId="Package\SEQC_Imputations_fact\DFT_CreateFact\OLE_SRC_FactTable.Outputs[OLE DB Source Error Output].Columns[Descontos]"
+                          dataType="numeric"
+                          lineageId="Package\SEQC_Imputations_fact\DFT_CreateFact\OLE_SRC_FactTable.Outputs[OLE DB Source Error Output].Columns[Descontos]"
+                          name="Descontos"
+                          precision="10"
+                          scale="2" />
+                        <outputColumn
+                          refId="Package\SEQC_Imputations_fact\DFT_CreateFact\OLE_SRC_FactTable.Outputs[OLE DB Source Error Output].Columns[NHoras]"
+                          dataType="numeric"
+                          lineageId="Package\SEQC_Imputations_fact\DFT_CreateFact\OLE_SRC_FactTable.Outputs[OLE DB Source Error Output].Columns[NHoras]"
+                          name="NHoras"
+                          precision="38"
+                          scale="2" />
+                        <outputColumn
+                          refId="Package\SEQC_Imputations_fact\DFT_CreateFact\OLE_SRC_FactTable.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\SEQC_Imputations_fact\DFT_CreateFact\OLE_SRC_FactTable.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\SEQC_Imputations_fact\DFT_CreateFact\OLE_SRC_FactTable.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\SEQC_Imputations_fact\DFT_CreateFact\OLE_SRC_FactTable.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\SEQC_Imputations_fact\DFT_CreateFact.Paths[Derived Column Output]"
+                  endId="Package\SEQC_Imputations_fact\DFT_CreateFact\CNT_Imputacoes.Inputs[Row Count Input 1]"
+                  name="Derived Column Output"
+                  startId="Package\SEQC_Imputations_fact\DFT_CreateFact\Derived Column.Outputs[Derived Column Output]" />
+                <path
+                  refId="Package\SEQC_Imputations_fact\DFT_CreateFact.Paths[OLE DB Source Output]"
+                  endId="Package\SEQC_Imputations_fact\DFT_CreateFact\Derived Column.Inputs[Derived Column Input]"
+                  name="OLE DB Source Output"
+                  startId="Package\SEQC_Imputations_fact\DFT_CreateFact\OLE_SRC_FactTable.Outputs[OLE DB Source Output]" />
+                <path
+                  refId="Package\SEQC_Imputations_fact\DFT_CreateFact.Paths[Row Count Output 1]"
+                  endId="Package\SEQC_Imputations_fact\DFT_CreateFact\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  name="Row Count Output 1"
+                  startId="Package\SEQC_Imputations_fact\DFT_CreateFact\CNT_Imputacoes.Outputs[Row Count Output 1]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\SEQC_Imputations_fact\EPT_FactControl"
+          DTS:CreationName="Microsoft.ExecutePackageTask"
+          DTS:Description="Execute Package Task"
+          DTS:DTSID="{B397419A-6A4B-4E8E-A78F-73E608776E6B}"
+          DTS:ExecutableType="Microsoft.ExecutePackageTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="EPT_FactControl"
+          DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ExecutePackageTask>
+              <UseProjectReference>True</UseProjectReference>
+              <PackageName>DWControl.dtsx</PackageName>
+              <ParameterAssignment>
+                <ParameterName>row_Count</ParameterName>
+                <BindedVariableOrParameterName>User::rowCountImputacoes</BindedVariableOrParameterName>
+              </ParameterAssignment>
+              <ParameterAssignment>
+                <ParameterName>tableName</ParameterName>
+                <BindedVariableOrParameterName>User::tableNameFact</BindedVariableOrParameterName>
+              </ParameterAssignment>
+            </ExecutePackageTask>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\SEQC_Imputations_fact\SQL_CleanFactTable"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{DEE2AB98-0738-43C4-9D91-DE3994CD8C58}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="SQL_CleanFactTable"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{57D6D694-C0FA-44BF-A876-D3C891EBD1AB}"
+              SQLTask:SqlStatementSource="DELETE FROM [dw].[Imputacoes]&#xA;&#xA;&#xA;DBCC CHECKIDENT ('[dw].[Imputacoes]', RESEED, 1);" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\SEQC_Imputations_fact\SQL_NormalizeDecimal"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{EDB9AF09-66DB-4A5F-A52D-DD4DFBBBE37D}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="SQL_NormalizeDecimal"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{57D6D694-C0FA-44BF-A876-D3C891EBD1AB}"
+              SQLTask:SqlStatementSource="alter table [dw].[imputacoes] alter COLUMN segurancaSocial decimal (10,2);&#xA;&#xA;alter table [dw].[imputacoes] alter COLUMN rendimentos decimal (10,2);&#xA;&#xA;&#xA;alter table [dw].[imputacoes] alter COLUMN descontos decimal (10,2);" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\SEQC_Imputations_fact.PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{7321670E-8DDC-4311-AB6C-D0F07D10135A}"
+          DTS:From="Package\SEQC_Imputations_fact\SQL_CleanFactTable"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package\SEQC_Imputations_fact\DFT_CreateFact" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\SEQC_Imputations_fact.PrecedenceConstraints[Constraint 1]"
+          DTS:CreationName=""
+          DTS:DTSID="{9DA0C466-9F9C-4DDA-9EE6-AAE6D5FED3B1}"
+          DTS:From="Package\SEQC_Imputations_fact\DFT_CreateFact"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 1"
+          DTS:To="Package\SEQC_Imputations_fact\SQL_NormalizeDecimal" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\SEQC_Imputations_fact.PrecedenceConstraints[Constraint 3]"
+          DTS:CreationName=""
+          DTS:DTSID="{8B152DED-8500-40B2-A0EF-30B6022FA67D}"
+          DTS:From="Package\SEQC_Imputations_fact\SQL_NormalizeDecimal"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 3"
+          DTS:To="Package\SEQC_Imputations_fact\EPT_FactControl" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="161,42"
+          Id="Package\SEQC_Imputations_fact\DFT_CreateFact"
+          TopLeft="138.5,128.75" />
+        <NodeLayout
+          Size="163,42"
+          Id="Package\SEQC_Imputations_fact\EPT_FactControl"
+          TopLeft="137.5,332.75" />
+        <NodeLayout
+          Size="185,42"
+          Id="Package\SEQC_Imputations_fact\SQL_CleanFactTable"
+          TopLeft="126.5,26.75" />
+        <NodeLayout
+          Size="197,42"
+          Id="Package\SEQC_Imputations_fact\SQL_NormalizeDecimal"
+          TopLeft="120.5,230.75" />
+        <EdgeLayout
+          Id="Package\SEQC_Imputations_fact.PrecedenceConstraints[Constraint]"
+          TopLeft="219,68.75">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\SEQC_Imputations_fact.PrecedenceConstraints[Constraint 1]"
+          TopLeft="219,170.75">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\SEQC_Imputations_fact.PrecedenceConstraints[Constraint 3]"
+          TopLeft="219,272.75">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="430,430"
+          Size="430,473"
+          Id="Package\SEQC_Imputations_fact"
+          TopLeft="80.5000000000001,25.5" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\SEQC_Imputations_fact\DFT_CreateFact">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="158,42"
+          Id="Package\SEQC_Imputations_fact\DFT_CreateFact\Derived Column"
+          TopLeft="59,126" />
+        <NodeLayout
+          Size="177,42"
+          Id="Package\SEQC_Imputations_fact\DFT_CreateFact\OLE DB Destination"
+          TopLeft="89.5,291" />
+        <NodeLayout
+          Size="165,42"
+          Id="Package\SEQC_Imputations_fact\DFT_CreateFact\CNT_Imputacoes"
+          TopLeft="67,201" />
+        <NodeLayout
+          Size="185,42"
+          Id="Package\SEQC_Imputations_fact\DFT_CreateFact\OLE_SRC_FactTable"
+          TopLeft="48,42.25" />
+        <EdgeLayout
+          Id="Package\SEQC_Imputations_fact\DFT_CreateFact.Paths[Derived Column Output]"
+          TopLeft="138,168">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="11.5,33"
+              Start="0,0"
+              End="11.5,25.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,12.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,12.5"
+                    Point2="0,16.5"
+                    Point3="4,16.5" />
+                  <mssgle:LineSegment
+                    End="7.5,16.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="7.5,16.5"
+                    Point2="11.5,16.5"
+                    Point3="11.5,20.5" />
+                  <mssgle:LineSegment
+                    End="11.5,25.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\SEQC_Imputations_fact\DFT_CreateFact.Paths[Row Count Output 1]"
+          TopLeft="149.5,243">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="28.5,48"
+              Start="0,0"
+              End="28.5,40.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,20"
+                    Point2="0,24"
+                    Point3="4,24" />
+                  <mssgle:LineSegment
+                    End="24.5,24" />
+                  <mssgle:CubicBezierSegment
+                    Point1="24.5,24"
+                    Point2="28.5,24"
+                    Point3="28.5,28" />
+                  <mssgle:LineSegment
+                    End="28.5,40.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\SEQC_Imputations_fact\DFT_CreateFact.Paths[OLE DB Source Output]"
+          TopLeft="139.25,84.25">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,41.75"
+              Start="0,0"
+              End="0,34.25">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,34.25" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\SEQC_Imputations_fact\DFT_CreateFact\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\SEQC_Imputations_fact\DFT_CreateFact\OLE_SRC_FactTable">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

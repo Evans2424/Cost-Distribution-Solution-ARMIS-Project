@@ -1,0 +1,534 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="3/15/2024 10:40:55 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-UMHE8LJ"
+  DTS:CreatorName="DESKTOP-UMHE8LJ\jpjoa"
+  DTS:DTSID="{0EAEE42E-0DE0-477A-8C04-A3AC298416A9}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5397.1"
+  DTS:LocaleID="2070"
+  DTS:ObjectName="Package1"
+  DTS:PackageType="5"
+  DTS:VersionBuild="85"
+  DTS:VersionGUID="{D0548D65-4F2E-4846-8E3C-89F7F796FF69}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:PackageParameters>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="3"
+      DTS:DTSID="{622D32AC-FABF-4974-85DA-A377FD9F172B}"
+      DTS:ObjectName="PerfilNaoEncontrado">
+      <DTS:Property
+        DTS:DataType="3"
+        DTS:Name="ParameterValue">0</DTS:Property>
+    </DTS:PackageParameter>
+  </DTS:PackageParameters>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{29087287-FDB1-4C85-9086-D88B41476963}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="perfilNaoEncontrado">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\SEQC_DIMENSIONS_CONSTRUCTOR"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{cae446e9-1f8b-47a6-9c3d-4220b955a69d}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="SEQC_DIMENSIONS_CONSTRUCTOR">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\SEQC_DIMENSIONS_CONSTRUCTOR\EPT_Dimensions_Constructor"
+          DTS:CreationName="Microsoft.ExecutePackageTask"
+          DTS:Description="Execute Package Task"
+          DTS:DTSID="{7b868e3a-a486-4e00-aafa-39642b43a9f6}"
+          DTS:ExecutableType="Microsoft.ExecutePackageTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="EPT_Dimensions_Constructor"
+          DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ExecutePackageTask>
+              <UseProjectReference>True</UseProjectReference>
+              <PackageName>Dimensions_Transformation.dtsx</PackageName>
+            </ExecutePackageTask>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\SEQC_DIMENSIONS_CONSTRUCTOR\SQL_CleanDimensionTables"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{1bd6f25f-302b-4f1d-8252-c1790aea125b}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="SQL_CleanDimensionTables"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{57D6D694-C0FA-44BF-A876-D3C891EBD1AB}"
+              SQLTask:SqlStatementSource="DELETE FROM [dw].[Imputacoes];&#xA;DELETE FROM [dw].[Colaboradores];&#xA;DELETE FROM [dw].[CentroCusto];&#xA;DELETE FROM [dw].[Projeto];&#xA;DELETE FROM [dw].[Empresa];&#xA;DELETE FROM [dw].[Perfil];&#xA;DELETE FROM [dw].DimData;&#xA;&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\SEQC_DIMENSIONS_CONSTRUCTOR.PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{972e0795-4e3d-42da-a68f-8076ba4e433e}"
+          DTS:From="Package\SEQC_DIMENSIONS_CONSTRUCTOR\SQL_CleanDimensionTables"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package\SEQC_DIMENSIONS_CONSTRUCTOR\EPT_Dimensions_Constructor" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\SEQC_FACT_CONSTRUCTOR"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{b20d2390-4fcc-4dc3-a383-06ea9ce93cc7}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="SEQC_FACT_CONSTRUCTOR">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\SEQC_FACT_CONSTRUCTOR\EPT_Fact_Constructor"
+          DTS:CreationName="Microsoft.ExecutePackageTask"
+          DTS:Description="Execute Package Task"
+          DTS:DTSID="{ee9ead2e-5ea4-4f92-8b7c-11e6233352d0}"
+          DTS:ExecutableType="Microsoft.ExecutePackageTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="EPT_Fact_Constructor"
+          DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ExecutePackageTask>
+              <UseProjectReference>True</UseProjectReference>
+              <PackageName>Fact_Transformation.dtsx</PackageName>
+            </ExecutePackageTask>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\SEQC_FACT_CONSTRUCTOR\SQL_FactCleaner"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{c8317876-480d-4ea0-80d6-0059cdf3da5f}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="SQL_FactCleaner"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{57D6D694-C0FA-44BF-A876-D3C891EBD1AB}"
+              SQLTask:SqlStatementSource="DELETE FROM [dw].[Imputacoes];&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\SEQC_FACT_CONSTRUCTOR.PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{8dbdcec1-a70b-4a86-b0fd-7087f1902c52}"
+          DTS:From="Package\SEQC_FACT_CONSTRUCTOR\SQL_FactCleaner"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package\SEQC_FACT_CONSTRUCTOR\EPT_Fact_Constructor" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\SEQC_Load_Staging _Area"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{94DF9592-B784-4D71-8993-CD86DBE59A16}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="SEQC_Load_Staging _Area">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\SEQC_Load_Staging _Area\EPT_Data_Ingestion"
+          DTS:CreationName="Microsoft.ExecutePackageTask"
+          DTS:Description="Execute Package Task"
+          DTS:DTSID="{706166C3-B784-446C-9FE6-8DF93D1D57CE}"
+          DTS:ExecutableType="Microsoft.ExecutePackageTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="EPT_Data_Ingestion"
+          DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ExecutePackageTask>
+              <UseProjectReference>True</UseProjectReference>
+              <PackageName>Data_Ingestion.dtsx</PackageName>
+            </ExecutePackageTask>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\SEQC_Load_Staging _Area\SQL_CleanStageTables"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{66277b91-979c-4bf2-bbbf-580a97c6674a}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="SQL_CleanStageTables"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{57D6D694-C0FA-44BF-A876-D3C891EBD1AB}"
+              SQLTask:SqlStatementSource="TRUNCATE TABLE [stg].[colaboradores];&#xA;TRUNCATE TABLE [stg].[empresas];&#xA;TRUNCATE TABLE [stg].[imputacoes];&#xA;TRUNCATE TABLE [stg].[perfil];&#xA;TRUNCATE TABLE [stg].[projetos];&#xA;TRUNCATE TABLE [stg].[funcionarios_primavera];&#xA;TRUNCATE TABLE [stg].[movimentos_primavera];&#xA;TRUNCATE TABLE [stg].[CentroCusto];&#xA;&#xA;&#xA;DBCC CHECKIDENT ('[stg].[CentroCusto]', RESEED, 1);" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\SEQC_Load_Staging _Area.PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{F206D07D-9FE0-4BCF-ABD6-2C9BB7F8B404}"
+          DTS:From="Package\SEQC_Load_Staging _Area\SQL_CleanStageTables"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package\SEQC_Load_Staging _Area\EPT_Data_Ingestion" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\SEQC_STAGE2_TRANSFORMATION"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{cfd0c1d0-57dc-4798-94aa-08c21c26a99b}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="SEQC_STAGE2_TRANSFORMATION">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\SEQC_STAGE2_TRANSFORMATION\EPT_Stage2"
+          DTS:CreationName="Microsoft.ExecutePackageTask"
+          DTS:Description="Execute Package Task"
+          DTS:DTSID="{43804fc6-7c28-4912-aacc-d9ece95bc89b}"
+          DTS:ExecutableType="Microsoft.ExecutePackageTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="EPT_Stage2"
+          DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ExecutePackageTask>
+              <UseProjectReference>True</UseProjectReference>
+              <PackageName>Stage2_Transformation.dtsx</PackageName>
+            </ExecutePackageTask>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\SEQC_STAGE2_TRANSFORMATION\SQL_CleanStage2Tables"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{7016bf51-6111-426d-a050-ad66e44e5a50}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="SQL_CleanStage2Tables"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{57D6D694-C0FA-44BF-A876-D3C891EBD1AB}"
+              SQLTask:SqlStatementSource="TRUNCATE TABLE [stg2].[perfil]&#xA;TRUNCATE TABLE [stg2].[Colaboradores];&#xA;TRUNCATE TABLE [stg2].[ColaboradoresMerged];&#xA;TRUNCATE TABLE[stg2].[projetos];&#xA;DELETE FROM [stg2].[empresas];&#xA;DELETE FROM [stg2].[CentroCusto]&#xA;DELETE FROM [stg2].[imputacoes]&#xA;DELETE FROM [stg2].[movimentos_primavera]&#xA;&#xA;&#xA;DBCC CHECKIDENT ('[stg2].[projetos]', RESEED, 1);&#xA;DBCC CHECKIDENT ('[stg2].[perfil]', RESEED, 1);" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\SEQC_STAGE2_TRANSFORMATION.PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{06df78ad-282f-47c1-a201-452fdac05597}"
+          DTS:From="Package\SEQC_STAGE2_TRANSFORMATION\SQL_CleanStage2Tables"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package\SEQC_STAGE2_TRANSFORMATION\EPT_Stage2" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{75C12F5D-687B-497F-BD07-D617725D95DE}"
+      DTS:From="Package\SEQC_Load_Staging _Area"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\SEQC_STAGE2_TRANSFORMATION" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{D5077910-3FF6-476A-B4DE-C5C14C7E48F4}"
+      DTS:From="Package\SEQC_STAGE2_TRANSFORMATION"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\SEQC_DIMENSIONS_CONSTRUCTOR" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
+      DTS:CreationName=""
+      DTS:DTSID="{90CC6DAF-6AB5-471F-9B0F-3AB4A03A3C57}"
+      DTS:From="Package\SEQC_DIMENSIONS_CONSTRUCTOR"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 2"
+      DTS:To="Package\SEQC_FACT_CONSTRUCTOR" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="227,42"
+          Id="Package\SEQC_DIMENSIONS_CONSTRUCTOR\EPT_Dimensions_Constructor"
+          TopLeft="57.904761904762,115.285714285714" />
+        <NodeLayout
+          Size="221,42"
+          Id="Package\SEQC_DIMENSIONS_CONSTRUCTOR\SQL_CleanDimensionTables"
+          TopLeft="62.7142857142858,28" />
+        <EdgeLayout
+          Id="Package\SEQC_DIMENSIONS_CONSTRUCTOR.PrecedenceConstraints[Constraint]"
+          TopLeft="172.309523809524,70">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,45.2857142857142"
+              Start="0,0"
+              End="0,37.7857142857142">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,37.7857142857142" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="327,229"
+          Size="327,272"
+          Id="Package\SEQC_DIMENSIONS_CONSTRUCTOR"
+          TopLeft="772.678571428572,22.8571428571425" />
+        <NodeLayout
+          Size="191,42"
+          Id="Package\SEQC_FACT_CONSTRUCTOR\EPT_Fact_Constructor"
+          TopLeft="57.9047619047619,115.285714285714" />
+        <NodeLayout
+          Size="167,42"
+          Id="Package\SEQC_FACT_CONSTRUCTOR\SQL_FactCleaner"
+          TopLeft="77.0000000000001,28" />
+        <EdgeLayout
+          Id="Package\SEQC_FACT_CONSTRUCTOR.PrecedenceConstraints[Constraint]"
+          TopLeft="156.952380952381,70">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,45.2857142857142"
+              Start="0,0"
+              End="0,37.7857142857142">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,37.7857142857142" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="327,229"
+          Size="327,272"
+          Id="Package\SEQC_FACT_CONSTRUCTOR"
+          TopLeft="55.8928571428574,336.369047619047" />
+        <NodeLayout
+          Size="180,42"
+          Id="Package\SEQC_Load_Staging _Area\EPT_Data_Ingestion"
+          TopLeft="61.2142857142857,131.785714285714" />
+        <NodeLayout
+          Size="198,42"
+          Id="Package\SEQC_Load_Staging _Area\SQL_CleanStageTables"
+          TopLeft="55.5714285714285,28.3571428571428" />
+        <EdgeLayout
+          Id="Package\SEQC_Load_Staging _Area.PrecedenceConstraints[Constraint]"
+          TopLeft="152.892857142857,70.3571428571429">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,61.4285714285714"
+              Start="0,0"
+              End="0,53.9285714285714">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,53.9285714285714" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="327,229"
+          Size="327,272"
+          Id="Package\SEQC_Load_Staging _Area"
+          TopLeft="60.5,29.5" />
+        <NodeLayout
+          Size="141,42"
+          Id="Package\SEQC_STAGE2_TRANSFORMATION\EPT_Stage2"
+          TopLeft="112.190476190476,122.428571428571" />
+        <NodeLayout
+          Size="204,42"
+          Id="Package\SEQC_STAGE2_TRANSFORMATION\SQL_CleanStage2Tables"
+          TopLeft="75.7500000000002,26.75" />
+        <EdgeLayout
+          Id="Package\SEQC_STAGE2_TRANSFORMATION.PrecedenceConstraints[Constraint]"
+          TopLeft="180.220238095238,68.75">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,53.678571428571"
+              Start="0,0"
+              End="0,46.178571428571">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,46.178571428571" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="327,219"
+          Size="327,262"
+          Id="Package\SEQC_STAGE2_TRANSFORMATION"
+          TopLeft="415.392857142857,28.3571428571429" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="387.5,162.428571428571">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="27.892857142857,0"
+              Start="0,0"
+              End="20.392857142857,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="20.392857142857,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="742.392857142857,159.107142857143">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="30.285714285715,0"
+              Start="0,0"
+              End="22.785714285715,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="22.785714285715,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 2]"
+          TopLeft="936.178571428572,294.857142857142">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-716.785714285715,41.5119047619048"
+              Start="0,0"
+              End="-716.785714285715,34.0119047619048">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,16.7559523809524" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,16.7559523809524"
+                    Point2="0,20.7559523809524"
+                    Point3="-4,20.7559523809524" />
+                  <mssgle:LineSegment
+                    End="-712.785714285715,20.7559523809524" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-712.785714285715,20.7559523809524"
+                    Point2="-716.785714285715,20.7559523809524"
+                    Point3="-716.785714285715,24.7559523809524" />
+                  <mssgle:LineSegment
+                    End="-716.785714285715,34.0119047619048" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

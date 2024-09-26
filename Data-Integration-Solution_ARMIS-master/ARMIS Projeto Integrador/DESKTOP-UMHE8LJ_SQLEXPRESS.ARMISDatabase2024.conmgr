@@ -1,0 +1,12 @@
+﻿<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="DESKTOP-UMHE8LJ_SQLEXPRESS.ARMISDatabase2024"
+  DTS:DTSID="{57D6D694-C0FA-44BF-A876-D3C891EBD1AB}"
+  DTS:CreationName="OLEDB">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectRetryCount="1"
+      DTS:ConnectRetryInterval="5"
+      DTS:ConnectionString="Data Source=DESKTOP-UMHE8LJ\SQLEXPRESS;Initial Catalog=ARMISDatabase2024;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-ARMIS Projeto Integrador-{57D6D694-C0FA-44BF-A876-D3C891EBD1AB}DESKTOP-UMHE8LJ\SQLEXPRESS.ARMISDatabase2024;Auto Translate=False;" />
+  </DTS:ObjectData>
+</DTS:ConnectionManager>
